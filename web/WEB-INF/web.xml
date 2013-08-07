@@ -11,7 +11,6 @@
 			<param-value>utf-8</param-value>
 		</init-param>
 	</filter>
-	<!-- LoginFilter & UrlAclFilter are optional. This is an example config. -->
 	<filter>
 		<filter-name>ralasafe/LoginFilter</filter-name>
 		<filter-class>org.ralasafe.webFilter.LoginFilter</filter-class>
@@ -71,6 +70,10 @@
 		</init-param>
 		<load-on-startup>4</load-on-startup>
 	</servlet>
+    <servlet-mapping>
+        <servlet-name>ralasafe</servlet-name>
+        <url-pattern>*.rls</url-pattern>
+    </servlet-mapping>
 
 	<!-- DEMO -->
 	<servlet>
@@ -85,14 +88,6 @@
 		<servlet-name>ralasafe/demo/DemoLoanMoneyServlet</servlet-name>
 		<servlet-class> org.ralasafe.demo.LoanMoneyServlet</servlet-class>
 	</servlet>
-	<!-- DEMO END -->
-
-	<servlet-mapping>
-		<servlet-name>ralasafe</servlet-name>
-		<url-pattern>*.rls</url-pattern>
-	</servlet-mapping>
-	
-	<!-- DEMO -->
 	<servlet-mapping>
 		<servlet-name>ralasafe/demo/DemoLogoutServlet</servlet-name>
 		<url-pattern>/ralasafe/demo/demoLogout</url-pattern>
