@@ -1,18 +1,14 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: BinaryExprType.java,v 1.1 2010/07/09 08:17:05 back Exp $
  */
-
 package org.ralasafe.db.sql.xml;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import org.exolab.castor.xml.Marshaller;
@@ -20,14 +16,14 @@ import org.exolab.castor.xml.Unmarshaller;
 
 /**
  * Class BinaryExprType.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:05 $
  */
 public class BinaryExprType implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -46,8 +42,8 @@ public class BinaryExprType implements java.io.Serializable {
     private Variable2 _variable2;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public BinaryExprType() {
@@ -55,13 +51,13 @@ public class BinaryExprType implements java.io.Serializable {
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Returns the value of field 'operator'.
-     * 
+     *
      * @return the value of field 'Operator'.
      */
     public Operator getOperator(
@@ -71,7 +67,7 @@ public class BinaryExprType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'variable1'.
-     * 
+     *
      * @return the value of field 'Variable1'.
      */
     public Variable1 getVariable1(
@@ -81,7 +77,7 @@ public class BinaryExprType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'variable2'.
-     * 
+     *
      * @return the value of field 'Variable2'.
      */
     public Variable2 getVariable2(
@@ -91,7 +87,7 @@ public class BinaryExprType implements java.io.Serializable {
 
     /**
      * Method isValid.
-     * 
+     *
      * @return true if this object is valid according to the schema
      */
     public boolean isValid(
@@ -105,40 +101,40 @@ public class BinaryExprType implements java.io.Serializable {
     }
 
     /**
-     * 
-     * 
      * @param out
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException
+     *          if object is
+     *          null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public void marshal(
             final java.io.Writer out)
-    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, out);
     }
 
     /**
-     * 
-     * 
      * @param handler
      * @throws java.io.IOException if an IOException occurs during
-     * marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
+     *                             marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *                             if this
+     *                             object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException
+     *                             if object is
+     *                             null or if any SAXException is thrown during marshaling
      */
     public void marshal(
             final org.xml.sax.ContentHandler handler)
-    throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, handler);
     }
 
     /**
      * Sets the value of field 'operator'.
-     * 
+     *
      * @param operator the value of field 'operator'.
      */
     public void setOperator(
@@ -148,7 +144,7 @@ public class BinaryExprType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'variable1'.
-     * 
+     *
      * @param variable1 the value of field 'variable1'.
      */
     public void setVariable1(
@@ -158,7 +154,7 @@ public class BinaryExprType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'variable2'.
-     * 
+     *
      * @param variable2 the value of field 'variable2'.
      */
     public void setVariable2(
@@ -168,29 +164,30 @@ public class BinaryExprType implements java.io.Serializable {
 
     /**
      * Method unmarshal.
-     * 
+     *
      * @param reader
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
      * @return the unmarshaled org.ralasafe.db.sql.xml.BinaryExprType
+     * @throws org.exolab.castor.xml.MarshalException
+     *          if object is
+     *          null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public static BinaryExprType unmarshal(
             final java.io.Reader reader)
-    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         return (BinaryExprType) Unmarshaller.unmarshal(BinaryExprType.class, reader);
     }
 
     /**
-     * 
-     * 
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public void validate(
     )
-    throws org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.ValidationException {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
     }

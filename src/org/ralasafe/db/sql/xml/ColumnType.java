@@ -1,37 +1,31 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: ColumnType.java,v 1.2 2010/07/29 02:41:59 back Exp $
  */
-
 package org.ralasafe.db.sql.xml;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
 
 /**
- * 
- * 
  * @version $Revision: 1.2 $ $Date: 2010/07/29 02:41:59 $
  */
 public class ColumnType implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
-     * 
+     *
      */
     private String _name;
 
@@ -42,13 +36,11 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * sum, max, min, avg
-     *  
      */
     private String _function;
 
     /**
      * desc/asc
-     *  
      */
     private org.ralasafe.db.sql.xml.types.ColumnTypeOrderType _order = org.ralasafe.db.sql.xml.types.ColumnTypeOrderType.valueOf("ASC");
 
@@ -63,8 +55,8 @@ public class ColumnType implements java.io.Serializable {
     private String _javaType;
 
     /**
-     * 
-     *  
+     *
+     *
      */
     private String _property;
 
@@ -79,8 +71,8 @@ public class ColumnType implements java.io.Serializable {
     private boolean _has_readOnly;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public ColumnType() {
@@ -89,23 +81,22 @@ public class ColumnType implements java.io.Serializable {
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      */
     public void deleteReadOnly(
     ) {
-        this._has_readOnly= false;
+        this._has_readOnly = false;
     }
 
     /**
      * Returns the value of field 'function'. The field 'function'
-     * has the following description: 
+     * has the following description:
      * avg
-     *  
-     * 
+     *
      * @return the value of field 'Function'.
      */
     public String getFunction(
@@ -115,7 +106,7 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'javaType'.
-     * 
+     *
      * @return the value of field 'JavaType'.
      */
     public String getJavaType(
@@ -126,7 +117,7 @@ public class ColumnType implements java.io.Serializable {
     /**
      * Returns the value of field 'name'. The field 'name' has the
      * following description:
-     * 
+     *
      * @return the value of field 'Name'.
      */
     public String getName(
@@ -137,8 +128,7 @@ public class ColumnType implements java.io.Serializable {
     /**
      * Returns the value of field 'order'. The field 'order' has
      * the following description:
-     *  
-     * 
+     *
      * @return the value of field 'Order'.
      */
     public org.ralasafe.db.sql.xml.types.ColumnTypeOrderType getOrder(
@@ -148,9 +138,8 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'property'. The field 'property'
-     * has the following description: 
-     *  
-     * 
+     * has the following description:
+     *
      * @return the value of field 'Property'.
      */
     public String getProperty(
@@ -160,7 +149,7 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'readOnly'.
-     * 
+     *
      * @return the value of field 'ReadOnly'.
      */
     public boolean getReadOnly(
@@ -170,7 +159,7 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'sqlType'.
-     * 
+     *
      * @return the value of field 'SqlType'.
      */
     public String getSqlType(
@@ -180,7 +169,7 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'tableAlias'.
-     * 
+     *
      * @return the value of field 'TableAlias'.
      */
     public String getTableAlias(
@@ -190,7 +179,7 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Method hasReadOnly.
-     * 
+     *
      * @return true if at least one ReadOnly has been added
      */
     public boolean hasReadOnly(
@@ -200,7 +189,7 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'readOnly'.
-     * 
+     *
      * @return the value of field 'ReadOnly'.
      */
     public boolean isReadOnly(
@@ -210,7 +199,7 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Method isValid.
-     * 
+     *
      * @return true if this object is valid according to the schema
      */
     public boolean isValid(
@@ -224,42 +213,41 @@ public class ColumnType implements java.io.Serializable {
     }
 
     /**
-     * 
-     * 
      * @param out
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException
+     *          if object is
+     *          null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public void marshal(
             final java.io.Writer out)
-    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, out);
     }
 
     /**
-     * 
-     * 
      * @param handler
      * @throws java.io.IOException if an IOException occurs during
-     * marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
+     *                             marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *                             if this
+     *                             object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException
+     *                             if object is
+     *                             null or if any SAXException is thrown during marshaling
      */
     public void marshal(
             final org.xml.sax.ContentHandler handler)
-    throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, handler);
     }
 
     /**
      * Sets the value of field 'function'. The field 'function' has
-     * the following description: 
-     *  
-     * 
+     * the following description:
+     *
      * @param function the value of field 'function'.
      */
     public void setFunction(
@@ -269,7 +257,7 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'javaType'.
-     * 
+     *
      * @param javaType the value of field 'javaType'.
      */
     public void setJavaType(
@@ -279,8 +267,8 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'name'. The field 'name' has the
-     * following description: 
-     * 
+     * following description:
+     *
      * @param name the value of field 'name'.
      */
     public void setName(
@@ -291,7 +279,7 @@ public class ColumnType implements java.io.Serializable {
     /**
      * Sets the value of field 'order'. The field 'order' has the
      * following description:
-     * 
+     *
      * @param order the value of field 'order'.
      */
     public void setOrder(
@@ -301,8 +289,8 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'property'. The field 'property' has
-     * the following description: 
-     * 
+     * the following description:
+     *
      * @param property the value of field 'property'.
      */
     public void setProperty(
@@ -312,7 +300,7 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'readOnly'.
-     * 
+     *
      * @param readOnly the value of field 'readOnly'.
      */
     public void setReadOnly(
@@ -323,7 +311,7 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'sqlType'.
-     * 
+     *
      * @param sqlType the value of field 'sqlType'.
      */
     public void setSqlType(
@@ -333,7 +321,7 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'tableAlias'.
-     * 
+     *
      * @param tableAlias the value of field 'tableAlias'.
      */
     public void setTableAlias(
@@ -343,29 +331,30 @@ public class ColumnType implements java.io.Serializable {
 
     /**
      * Method unmarshal.
-     * 
+     *
      * @param reader
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
      * @return the unmarshaled org.ralasafe.db.sql.xml.ColumnType
+     * @throws org.exolab.castor.xml.MarshalException
+     *          if object is
+     *          null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public static ColumnType unmarshal(
             final java.io.Reader reader)
-    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         return (ColumnType) Unmarshaller.unmarshal(ColumnType.class, reader);
     }
 
     /**
-     * 
-     * 
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public void validate(
     )
-    throws org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.ValidationException {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
     }

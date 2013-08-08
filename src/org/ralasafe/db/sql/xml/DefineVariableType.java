@@ -1,33 +1,27 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: DefineVariableType.java,v 1.2 2010/07/29 02:41:59 back Exp $
  */
-
 package org.ralasafe.db.sql.xml;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
 
 /**
- * 
- * 
  * @version $Revision: 1.2 $ $Date: 2010/07/29 02:41:59 $
  */
 public class DefineVariableType implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -71,8 +65,8 @@ public class DefineVariableType implements java.io.Serializable {
     private Formula _formula;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public DefineVariableType() {
@@ -80,15 +74,15 @@ public class DefineVariableType implements java.io.Serializable {
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Returns the value of field 'choiceValue'. The field
      * 'choiceValue' has the following description: Internal choice
      * value storage
-     * 
+     *
      * @return the value of field 'ChoiceValue'.
      */
     public Object getChoiceValue(
@@ -98,7 +92,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'contextValue'.
-     * 
+     *
      * @return the value of field 'ContextValue'.
      */
     public ContextValue getContextValue(
@@ -108,7 +102,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'formula'.
-     * 
+     *
      * @return the value of field 'Formula'.
      */
     public Formula getFormula(
@@ -118,7 +112,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'hintValue'.
-     * 
+     *
      * @return the value of field 'HintValue'.
      */
     public HintValue getHintValue(
@@ -128,7 +122,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'name'.
-     * 
+     *
      * @return the value of field 'Name'.
      */
     public String getName(
@@ -138,7 +132,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'queryRef'.
-     * 
+     *
      * @return the value of field 'QueryRef'.
      */
     public QueryRef getQueryRef(
@@ -148,7 +142,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'simpleValue'.
-     * 
+     *
      * @return the value of field 'SimpleValue'.
      */
     public SimpleValue getSimpleValue(
@@ -158,7 +152,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'userValue'.
-     * 
+     *
      * @return the value of field 'UserValue'.
      */
     public UserValue getUserValue(
@@ -168,7 +162,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Method isValid.
-     * 
+     *
      * @return true if this object is valid according to the schema
      */
     public boolean isValid(
@@ -182,40 +176,40 @@ public class DefineVariableType implements java.io.Serializable {
     }
 
     /**
-     * 
-     * 
      * @param out
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException
+     *          if object is
+     *          null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public void marshal(
             final java.io.Writer out)
-    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, out);
     }
 
     /**
-     * 
-     * 
      * @param handler
      * @throws java.io.IOException if an IOException occurs during
-     * marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
+     *                             marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *                             if this
+     *                             object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException
+     *                             if object is
+     *                             null or if any SAXException is thrown during marshaling
      */
     public void marshal(
             final org.xml.sax.ContentHandler handler)
-    throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, handler);
     }
 
     /**
      * Sets the value of field 'contextValue'.
-     * 
+     *
      * @param contextValue the value of field 'contextValue'.
      */
     public void setContextValue(
@@ -226,7 +220,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'formula'.
-     * 
+     *
      * @param formula the value of field 'formula'.
      */
     public void setFormula(
@@ -237,7 +231,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'hintValue'.
-     * 
+     *
      * @param hintValue the value of field 'hintValue'.
      */
     public void setHintValue(
@@ -248,7 +242,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'name'.
-     * 
+     *
      * @param name the value of field 'name'.
      */
     public void setName(
@@ -258,7 +252,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'queryRef'.
-     * 
+     *
      * @param queryRef the value of field 'queryRef'.
      */
     public void setQueryRef(
@@ -269,7 +263,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'simpleValue'.
-     * 
+     *
      * @param simpleValue the value of field 'simpleValue'.
      */
     public void setSimpleValue(
@@ -280,7 +274,7 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'userValue'.
-     * 
+     *
      * @param userValue the value of field 'userValue'.
      */
     public void setUserValue(
@@ -291,29 +285,30 @@ public class DefineVariableType implements java.io.Serializable {
 
     /**
      * Method unmarshal.
-     * 
+     *
      * @param reader
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
      * @return the unmarshaled org.ralasafe.db.sql.xml.DefineVariableTyp
+     * @throws org.exolab.castor.xml.MarshalException
+     *          if object is
+     *          null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public static DefineVariableType unmarshal(
             final java.io.Reader reader)
-    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         return (DefineVariableType) Unmarshaller.unmarshal(DefineVariableType.class, reader);
     }
 
     /**
-     * 
-     * 
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public void validate(
     )
-    throws org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.ValidationException {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
     }

@@ -1,18 +1,14 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: LeftOfIn.java,v 1.1 2010/07/09 08:17:06 back Exp $
  */
-
 package org.ralasafe.db.sql.xml;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import org.exolab.castor.xml.Marshaller;
@@ -20,14 +16,14 @@ import org.exolab.castor.xml.Unmarshaller;
 
 /**
  * Class LeftOfIn.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:06 $
  */
 public class LeftOfIn implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -46,8 +42,8 @@ public class LeftOfIn implements java.io.Serializable {
     private Query _query;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public LeftOfIn() {
@@ -56,43 +52,39 @@ public class LeftOfIn implements java.io.Serializable {
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
-     * 
-     * 
      * @param vColumn
      * @throws IndexOutOfBoundsException if the index
-     * given is outside the bounds of the collection
+     *                                   given is outside the bounds of the collection
      */
     public void addColumn(
             final Column vColumn)
-    throws IndexOutOfBoundsException {
+            throws IndexOutOfBoundsException {
         this._columnList.addElement(vColumn);
     }
 
     /**
-     * 
-     * 
      * @param index
      * @param vColumn
      * @throws IndexOutOfBoundsException if the index
-     * given is outside the bounds of the collection
+     *                                   given is outside the bounds of the collection
      */
     public void addColumn(
             final int index,
             final Column vColumn)
-    throws IndexOutOfBoundsException {
+            throws IndexOutOfBoundsException {
         this._columnList.add(index, vColumn);
     }
 
     /**
      * Method enumerateColumn.
-     * 
+     *
      * @return an Enumeration over all org.ralasafe.db.sql.xml.Column
-     * elements
+     *         elements
      */
     public java.util.Enumeration enumerateColumn(
     ) {
@@ -103,7 +95,7 @@ public class LeftOfIn implements java.io.Serializable {
      * Returns the value of field 'choiceValue'. The field
      * 'choiceValue' has the following description: Internal choice
      * value storage
-     * 
+     *
      * @return the value of field 'ChoiceValue'.
      */
     public Object getChoiceValue(
@@ -113,21 +105,21 @@ public class LeftOfIn implements java.io.Serializable {
 
     /**
      * Method getColumn.
-     * 
+     *
      * @param index
-     * @throws IndexOutOfBoundsException if the index
-     * given is outside the bounds of the collection
      * @return the value of the org.ralasafe.db.sql.xml.Column at the
-     * given index
+     *         given index
+     * @throws IndexOutOfBoundsException if the index
+     *                                   given is outside the bounds of the collection
      */
     public Column getColumn(
             final int index)
-    throws IndexOutOfBoundsException {
+            throws IndexOutOfBoundsException {
         // check bounds for index
         if (index < 0 || index >= this._columnList.size()) {
             throw new IndexOutOfBoundsException("getColumn: Index value '" + index + "' not in range [0.." + (this._columnList.size() - 1) + "]");
         }
-        
+
         return (Column) _columnList.get(index);
     }
 
@@ -137,7 +129,7 @@ public class LeftOfIn implements java.io.Serializable {
      * are changing in another thread, we pass a 0-length Array of
      * the correct type into the API call.  This way we <i>know</i>
      * that the Array returned is of exactly the correct length.
-     * 
+     *
      * @return this collection as an Array
      */
     public Column[] getColumn(
@@ -148,7 +140,7 @@ public class LeftOfIn implements java.io.Serializable {
 
     /**
      * Method getColumnCount.
-     * 
+     *
      * @return the size of this collection
      */
     public int getColumnCount(
@@ -158,7 +150,7 @@ public class LeftOfIn implements java.io.Serializable {
 
     /**
      * Returns the value of field 'query'.
-     * 
+     *
      * @return the value of field 'Query'.
      */
     public Query getQuery(
@@ -168,7 +160,7 @@ public class LeftOfIn implements java.io.Serializable {
 
     /**
      * Method isValid.
-     * 
+     *
      * @return true if this object is valid according to the schema
      */
     public boolean isValid(
@@ -182,34 +174,34 @@ public class LeftOfIn implements java.io.Serializable {
     }
 
     /**
-     * 
-     * 
      * @param out
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException
+     *          if object is
+     *          null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public void marshal(
             final java.io.Writer out)
-    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, out);
     }
 
     /**
-     * 
-     * 
      * @param handler
      * @throws java.io.IOException if an IOException occurs during
-     * marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
+     *                             marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *                             if this
+     *                             object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException
+     *                             if object is
+     *                             null or if any SAXException is thrown during marshaling
      */
     public void marshal(
             final org.xml.sax.ContentHandler handler)
-    throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, handler);
     }
 
@@ -222,7 +214,7 @@ public class LeftOfIn implements java.io.Serializable {
 
     /**
      * Method removeColumn.
-     * 
+     *
      * @param vColumn
      * @return true if the object was removed from the collection.
      */
@@ -234,7 +226,7 @@ public class LeftOfIn implements java.io.Serializable {
 
     /**
      * Method removeColumnAt.
-     * 
+     *
      * @param index
      * @return the element removed from the collection
      */
@@ -245,43 +237,39 @@ public class LeftOfIn implements java.io.Serializable {
     }
 
     /**
-     * 
-     * 
      * @param index
      * @param vColumn
      * @throws IndexOutOfBoundsException if the index
-     * given is outside the bounds of the collection
+     *                                   given is outside the bounds of the collection
      */
     public void setColumn(
             final int index,
             final Column vColumn)
-    throws IndexOutOfBoundsException {
+            throws IndexOutOfBoundsException {
         // check bounds for index
         if (index < 0 || index >= this._columnList.size()) {
             throw new IndexOutOfBoundsException("setColumn: Index value '" + index + "' not in range [0.." + (this._columnList.size() - 1) + "]");
         }
-        
+
         this._columnList.set(index, vColumn);
     }
 
     /**
-     * 
-     * 
      * @param vColumnArray
      */
     public void setColumn(
             final Column[] vColumnArray) {
         //-- copy array
         _columnList.clear();
-        
+
         for (int i = 0; i < vColumnArray.length; i++) {
-                this._columnList.add(vColumnArray[i]);
+            this._columnList.add(vColumnArray[i]);
         }
     }
 
     /**
      * Sets the value of field 'query'.
-     * 
+     *
      * @param query the value of field 'query'.
      */
     public void setQuery(
@@ -292,29 +280,30 @@ public class LeftOfIn implements java.io.Serializable {
 
     /**
      * Method unmarshal.
-     * 
+     *
      * @param reader
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
      * @return the unmarshaled org.ralasafe.db.sql.xml.LeftOfIn
+     * @throws org.exolab.castor.xml.MarshalException
+     *          if object is
+     *          null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public static LeftOfIn unmarshal(
             final java.io.Reader reader)
-    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         return (LeftOfIn) Unmarshaller.unmarshal(LeftOfIn.class, reader);
     }
 
     /**
-     * 
-     * 
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public void validate(
     )
-    throws org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.ValidationException {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
     }

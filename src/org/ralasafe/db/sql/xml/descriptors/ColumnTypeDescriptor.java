@@ -1,32 +1,28 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: ColumnTypeDescriptor.java,v 1.1 2010/07/09 08:17:18 back Exp $
  */
-
 package org.ralasafe.db.sql.xml.descriptors;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import org.ralasafe.db.sql.xml.ColumnType;
 
 /**
  * Class ColumnTypeDescriptor.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:18 $
  */
 public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -55,39 +51,39 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
     private org.exolab.castor.xml.XMLFieldDescriptor _identity;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public ColumnTypeDescriptor() {
         super();
         _xmlName = "ColumnType";
         _elementDefinition = false;
-        org.exolab.castor.xml.util.XMLFieldDescriptorImpl  desc           = null;
-        org.exolab.castor.mapping.FieldHandler             handler        = null;
-        org.exolab.castor.xml.FieldValidator               fieldValidator = null;
+        org.exolab.castor.xml.util.XMLFieldDescriptorImpl desc = null;
+        org.exolab.castor.mapping.FieldHandler handler = null;
+        org.exolab.castor.xml.FieldValidator fieldValidator = null;
         //-- initialize attribute descriptors
-        
+
         //-- _name
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(String.class, "_name", "name", org.exolab.castor.xml.NodeType.Attribute);
         desc.setImmutable(true);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ColumnType target = (ColumnType) object;
                 return target.getName();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ColumnType target = (ColumnType) object;
-                    target.setName( (String) value);
+                    target.setName((String) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return null;
             }
@@ -97,7 +93,7 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         desc.setRequired(true);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _name
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
@@ -112,22 +108,22 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(String.class, "_tableAlias", "tableAlias", org.exolab.castor.xml.NodeType.Attribute);
         desc.setImmutable(true);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ColumnType target = (ColumnType) object;
                 return target.getTableAlias();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ColumnType target = (ColumnType) object;
-                    target.setTableAlias( (String) value);
+                    target.setTableAlias((String) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return null;
             }
@@ -137,7 +133,7 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         desc.setRequired(true);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _tableAlias
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
@@ -152,22 +148,22 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(String.class, "_function", "function", org.exolab.castor.xml.NodeType.Attribute);
         desc.setImmutable(true);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ColumnType target = (ColumnType) object;
                 return target.getFunction();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ColumnType target = (ColumnType) object;
-                    target.setFunction( (String) value);
+                    target.setFunction((String) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return null;
             }
@@ -176,7 +172,7 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         desc.setHandler(handler);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _function
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -189,22 +185,22 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         //-- _order
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.types.ColumnTypeOrderType.class, "_order", "order", org.exolab.castor.xml.NodeType.Attribute);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ColumnType target = (ColumnType) object;
                 return target.getOrder();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ColumnType target = (ColumnType) object;
-                    target.setOrder( (org.ralasafe.db.sql.xml.types.ColumnTypeOrderType) value);
+                    target.setOrder((org.ralasafe.db.sql.xml.types.ColumnTypeOrderType) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return null;
             }
@@ -215,7 +211,7 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         desc.setHandler(handler);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _order
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -225,22 +221,22 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(String.class, "_sqlType", "sqlType", org.exolab.castor.xml.NodeType.Attribute);
         desc.setImmutable(true);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ColumnType target = (ColumnType) object;
                 return target.getSqlType();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ColumnType target = (ColumnType) object;
-                    target.setSqlType( (String) value);
+                    target.setSqlType((String) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return null;
             }
@@ -249,7 +245,7 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         desc.setHandler(handler);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _sqlType
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -263,22 +259,22 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(String.class, "_javaType", "javaType", org.exolab.castor.xml.NodeType.Attribute);
         desc.setImmutable(true);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ColumnType target = (ColumnType) object;
                 return target.getJavaType();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ColumnType target = (ColumnType) object;
-                    target.setJavaType( (String) value);
+                    target.setJavaType((String) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return null;
             }
@@ -287,7 +283,7 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         desc.setHandler(handler);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _javaType
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -301,22 +297,22 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(String.class, "_property", "property", org.exolab.castor.xml.NodeType.Attribute);
         desc.setImmutable(true);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ColumnType target = (ColumnType) object;
                 return target.getProperty();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ColumnType target = (ColumnType) object;
-                    target.setProperty( (String) value);
+                    target.setProperty((String) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return null;
             }
@@ -325,7 +321,7 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         desc.setHandler(handler);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _property
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -338,16 +334,17 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         //-- _readOnly
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(Boolean.TYPE, "_readOnly", "readOnly", org.exolab.castor.xml.NodeType.Attribute);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ColumnType target = (ColumnType) object;
-                if (!target.hasReadOnly()) { return null; }
+                if (!target.hasReadOnly()) {
+                    return null;
+                }
                 return (target.getReadOnly() ? Boolean.TRUE : Boolean.FALSE);
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ColumnType target = (ColumnType) object;
                     // if null, use delete method for optional primitives 
@@ -355,11 +352,12 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
                         target.deleteReadOnly();
                         return;
                     }
-                    target.setReadOnly( ((Boolean) value).booleanValue());
+                    target.setReadOnly(((Boolean) value).booleanValue());
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return null;
             }
@@ -368,7 +366,7 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         desc.setHandler(handler);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _readOnly
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -378,17 +376,17 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         }
         desc.setValidator(fieldValidator);
         //-- initialize element descriptors
-        
+
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method getAccessMode.
-     * 
+     *
      * @return the access mode specified for this class.
      */
     public org.exolab.castor.mapping.AccessMode getAccessMode(
@@ -398,9 +396,9 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
 
     /**
      * Method getIdentity.
-     * 
+     *
      * @return the identity field, null if this class has no
-     * identity.
+     *         identity.
      */
     public org.exolab.castor.mapping.FieldDescriptor getIdentity(
     ) {
@@ -409,7 +407,7 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
 
     /**
      * Method getJavaClass.
-     * 
+     *
      * @return the Java class represented by this descriptor.
      */
     public Class getJavaClass(
@@ -419,7 +417,7 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
 
     /**
      * Method getNameSpacePrefix.
-     * 
+     *
      * @return the namespace prefix to use when marshaling as XML.
      */
     public String getNameSpacePrefix(
@@ -429,9 +427,9 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
 
     /**
      * Method getNameSpaceURI.
-     * 
+     *
      * @return the namespace URI used when marshaling and
-     * unmarshaling as XML.
+     *         unmarshaling as XML.
      */
     public String getNameSpaceURI(
     ) {
@@ -440,9 +438,9 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
 
     /**
      * Method getValidator.
-     * 
+     *
      * @return a specific validator for the class described by this
-     * ClassDescriptor.
+     *         ClassDescriptor.
      */
     public org.exolab.castor.xml.TypeValidator getValidator(
     ) {
@@ -451,7 +449,7 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
 
     /**
      * Method getXMLName.
-     * 
+     *
      * @return the XML Name for the Class being described.
      */
     public String getXMLName(
@@ -461,10 +459,10 @@ public class ColumnTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDes
 
     /**
      * Method isElementDefinition.
-     * 
+     *
      * @return true if XML schema definition of this Class is that
-     * of a global
-     * element or element with anonymous type definition.
+     *         of a global
+     *         element or element with anonymous type definition.
      */
     public boolean isElementDefinition(
     ) {

@@ -1,32 +1,28 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: BinaryExprTypeDescriptor.java,v 1.1 2010/07/09 08:17:19 back Exp $
  */
-
 package org.ralasafe.db.sql.xml.descriptors;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import org.ralasafe.db.sql.xml.BinaryExprType;
 
 /**
  * Class BinaryExprTypeDescriptor.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:19 $
  */
 public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -55,43 +51,43 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
     private org.exolab.castor.xml.XMLFieldDescriptor _identity;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public BinaryExprTypeDescriptor() {
         super();
         _xmlName = "BinaryExprType";
         _elementDefinition = false;
-        
+
         //-- set grouping compositor
         setCompositorAsSequence();
-        org.exolab.castor.xml.util.XMLFieldDescriptorImpl  desc           = null;
-        org.exolab.castor.mapping.FieldHandler             handler        = null;
-        org.exolab.castor.xml.FieldValidator               fieldValidator = null;
+        org.exolab.castor.xml.util.XMLFieldDescriptorImpl desc = null;
+        org.exolab.castor.mapping.FieldHandler handler = null;
+        org.exolab.castor.xml.FieldValidator fieldValidator = null;
         //-- initialize attribute descriptors
-        
+
         //-- initialize element descriptors
-        
+
         //-- _variable1
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.Variable1.class, "_variable1", "variable1", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 BinaryExprType target = (BinaryExprType) object;
                 return target.getVariable1();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     BinaryExprType target = (BinaryExprType) object;
-                    target.setVariable1( (org.ralasafe.db.sql.xml.Variable1) value);
+                    target.setVariable1((org.ralasafe.db.sql.xml.Variable1) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.Variable1();
             }
@@ -102,7 +98,7 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _variable1
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
@@ -112,22 +108,22 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
         //-- _operator
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.Operator.class, "_operator", "-error-if-this-is-used-", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 BinaryExprType target = (BinaryExprType) object;
                 return target.getOperator();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     BinaryExprType target = (BinaryExprType) object;
-                    target.setOperator( (org.ralasafe.db.sql.xml.Operator) value);
+                    target.setOperator((org.ralasafe.db.sql.xml.Operator) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.Operator();
             }
@@ -140,7 +136,7 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _operator
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
@@ -150,22 +146,22 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
         //-- _variable2
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.Variable2.class, "_variable2", "variable2", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 BinaryExprType target = (BinaryExprType) object;
                 return target.getVariable2();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     BinaryExprType target = (BinaryExprType) object;
-                    target.setVariable2( (org.ralasafe.db.sql.xml.Variable2) value);
+                    target.setVariable2((org.ralasafe.db.sql.xml.Variable2) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.Variable2();
             }
@@ -176,7 +172,7 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _variable2
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
@@ -186,13 +182,13 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method getAccessMode.
-     * 
+     *
      * @return the access mode specified for this class.
      */
     public org.exolab.castor.mapping.AccessMode getAccessMode(
@@ -202,9 +198,9 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
 
     /**
      * Method getIdentity.
-     * 
+     *
      * @return the identity field, null if this class has no
-     * identity.
+     *         identity.
      */
     public org.exolab.castor.mapping.FieldDescriptor getIdentity(
     ) {
@@ -213,7 +209,7 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
 
     /**
      * Method getJavaClass.
-     * 
+     *
      * @return the Java class represented by this descriptor.
      */
     public Class getJavaClass(
@@ -223,7 +219,7 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
 
     /**
      * Method getNameSpacePrefix.
-     * 
+     *
      * @return the namespace prefix to use when marshaling as XML.
      */
     public String getNameSpacePrefix(
@@ -233,9 +229,9 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
 
     /**
      * Method getNameSpaceURI.
-     * 
+     *
      * @return the namespace URI used when marshaling and
-     * unmarshaling as XML.
+     *         unmarshaling as XML.
      */
     public String getNameSpaceURI(
     ) {
@@ -244,9 +240,9 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
 
     /**
      * Method getValidator.
-     * 
+     *
      * @return a specific validator for the class described by this
-     * ClassDescriptor.
+     *         ClassDescriptor.
      */
     public org.exolab.castor.xml.TypeValidator getValidator(
     ) {
@@ -255,7 +251,7 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
 
     /**
      * Method getXMLName.
-     * 
+     *
      * @return the XML Name for the Class being described.
      */
     public String getXMLName(
@@ -265,10 +261,10 @@ public class BinaryExprTypeDescriptor extends org.exolab.castor.xml.util.XMLClas
 
     /**
      * Method isElementDefinition.
-     * 
+     *
      * @return true if XML schema definition of this Class is that
-     * of a global
-     * element or element with anonymous type definition.
+     *         of a global
+     *         element or element with anonymous type definition.
      */
     public boolean isElementDefinition(
     ) {

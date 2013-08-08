@@ -1,18 +1,14 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: QueryType.java,v 1.2 2010/07/29 02:41:59 back Exp $
  */
-
 package org.ralasafe.db.sql.xml;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import org.exolab.castor.xml.Marshaller;
@@ -20,14 +16,14 @@ import org.exolab.castor.xml.Unmarshaller;
 
 /**
  * Class QueryType.
- * 
+ *
  * @version $Revision: 1.2 $ $Date: 2010/07/29 02:41:59 $
  */
 public class QueryType implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -78,8 +74,8 @@ public class QueryType implements java.io.Serializable {
     private org.ralasafe.db.sql.xml.StoredProcedure _storedProcedure;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public QueryType() {
@@ -88,27 +84,28 @@ public class QueryType implements java.io.Serializable {
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      */
     public void deleteIsRawSQL(
     ) {
-        this._has_isRawSQL= false;
+        this._has_isRawSQL = false;
     }
 
     /**
      */
     public void deleteIsStoredProcedure(
     ) {
-        this._has_isStoredProcedure= false;
+        this._has_isStoredProcedure = false;
     }
 
     /**
      * Returns the value of field 'ds'. The field 'ds' has the
-     * following description: 
+     * following description:
+     *
      * @return the value of field 'Ds'.
      */
     public String getDs(
@@ -118,7 +115,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'isRawSQL'.
-     * 
+     *
      * @return the value of field 'IsRawSQL'.
      */
     public boolean getIsRawSQL(
@@ -128,7 +125,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'isStoredProcedure'.
-     * 
+     *
      * @return the value of field 'IsStoredProcedure'.
      */
     public boolean getIsStoredProcedure(
@@ -138,7 +135,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'name'.
-     * 
+     *
      * @return the value of field 'Name'.
      */
     public String getName(
@@ -148,7 +145,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'queryTypeSequence'.
-     * 
+     *
      * @return the value of field 'QueryTypeSequence'.
      */
     public org.ralasafe.db.sql.xml.QueryTypeSequence getQueryTypeSequence(
@@ -158,7 +155,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'rawSQL'.
-     * 
+     *
      * @return the value of field 'RawSQL'.
      */
     public RawSQL getRawSQL(
@@ -168,7 +165,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'storedProcedure'.
-     * 
+     *
      * @return the value of field 'StoredProcedure'.
      */
     public org.ralasafe.db.sql.xml.StoredProcedure getStoredProcedure(
@@ -178,7 +175,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'type'.
-     * 
+     *
      * @return the value of field 'Type'.
      */
     public org.ralasafe.db.sql.xml.types.QueryTypeTypeType getType(
@@ -188,7 +185,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Method hasIsRawSQL.
-     * 
+     *
      * @return true if at least one IsRawSQL has been added
      */
     public boolean hasIsRawSQL(
@@ -198,7 +195,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Method hasIsStoredProcedure.
-     * 
+     *
      * @return true if at least one IsStoredProcedure has been added
      */
     public boolean hasIsStoredProcedure(
@@ -208,7 +205,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'isRawSQL'.
-     * 
+     *
      * @return the value of field 'IsRawSQL'.
      */
     public boolean isIsRawSQL(
@@ -218,7 +215,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'isStoredProcedure'.
-     * 
+     *
      * @return the value of field 'IsStoredProcedure'.
      */
     public boolean isIsStoredProcedure(
@@ -228,7 +225,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Method isValid.
-     * 
+     *
      * @return true if this object is valid according to the schema
      */
     public boolean isValid(
@@ -242,40 +239,41 @@ public class QueryType implements java.io.Serializable {
     }
 
     /**
-     * 
-     * 
      * @param out
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException
+     *          if object is
+     *          null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public void marshal(
             final java.io.Writer out)
-    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, out);
     }
 
     /**
-     * 
-     * 
      * @param handler
      * @throws java.io.IOException if an IOException occurs during
-     * marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
+     *                             marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *                             if this
+     *                             object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException
+     *                             if object is
+     *                             null or if any SAXException is thrown during marshaling
      */
     public void marshal(
             final org.xml.sax.ContentHandler handler)
-    throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, handler);
     }
 
     /**
      * Sets the value of field 'ds'. The field 'ds' has the
-     * following description: 
+     * following description:
+     *
      * @param ds the value of field 'ds'.
      */
     public void setDs(
@@ -285,7 +283,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'isRawSQL'.
-     * 
+     *
      * @param isRawSQL the value of field 'isRawSQL'.
      */
     public void setIsRawSQL(
@@ -296,9 +294,9 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'isStoredProcedure'.
-     * 
+     *
      * @param isStoredProcedure the value of field
-     * 'isStoredProcedure'.
+     *                          'isStoredProcedure'.
      */
     public void setIsStoredProcedure(
             final boolean isStoredProcedure) {
@@ -308,7 +306,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'name'.
-     * 
+     *
      * @param name the value of field 'name'.
      */
     public void setName(
@@ -318,9 +316,9 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'queryTypeSequence'.
-     * 
+     *
      * @param queryTypeSequence the value of field
-     * 'queryTypeSequence'.
+     *                          'queryTypeSequence'.
      */
     public void setQueryTypeSequence(
             final org.ralasafe.db.sql.xml.QueryTypeSequence queryTypeSequence) {
@@ -329,7 +327,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'rawSQL'.
-     * 
+     *
      * @param rawSQL the value of field 'rawSQL'.
      */
     public void setRawSQL(
@@ -339,7 +337,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'storedProcedure'.
-     * 
+     *
      * @param storedProcedure the value of field 'storedProcedure'.
      */
     public void setStoredProcedure(
@@ -349,7 +347,7 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'type'.
-     * 
+     *
      * @param type the value of field 'type'.
      */
     public void setType(
@@ -359,29 +357,30 @@ public class QueryType implements java.io.Serializable {
 
     /**
      * Method unmarshal.
-     * 
+     *
      * @param reader
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
      * @return the unmarshaled org.ralasafe.db.sql.xml.QueryType
+     * @throws org.exolab.castor.xml.MarshalException
+     *          if object is
+     *          null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public static QueryType unmarshal(
             final java.io.Reader reader)
-    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         return (QueryType) Unmarshaller.unmarshal(QueryType.class, reader);
     }
 
     /**
-     * 
-     * 
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public void validate(
     )
-    throws org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.ValidationException {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
     }

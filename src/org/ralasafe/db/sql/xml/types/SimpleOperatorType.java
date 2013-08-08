@@ -1,32 +1,28 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: SimpleOperatorType.java,v 1.1 2010/07/09 08:17:54 back Exp $
  */
-
 package org.ralasafe.db.sql.xml.types;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import java.util.Hashtable;
 
 /**
  * Class SimpleOperatorType.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:54 $
  */
 public class SimpleOperatorType implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -115,8 +111,8 @@ public class SimpleOperatorType implements java.io.Serializable {
     private String stringValue = null;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     private SimpleOperatorType(final int type, final String value) {
@@ -126,16 +122,16 @@ public class SimpleOperatorType implements java.io.Serializable {
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method enumerate.Returns an enumeration of all possible
      * instances of SimpleOperatorType
-     * 
+     *
      * @return an Enumeration over all possible instances of
-     * SimpleOperatorType
+     *         SimpleOperatorType
      */
     public static java.util.Enumeration enumerate(
     ) {
@@ -144,7 +140,7 @@ public class SimpleOperatorType implements java.io.Serializable {
 
     /**
      * Method getType.Returns the type of this SimpleOperatorType
-     * 
+     *
      * @return the type of this SimpleOperatorType
      */
     public int getType(
@@ -154,7 +150,7 @@ public class SimpleOperatorType implements java.io.Serializable {
 
     /**
      * Method init.
-     * 
+     *
      * @return the initialized Hashtable for the member table
      */
     private static Hashtable init(
@@ -174,7 +170,7 @@ public class SimpleOperatorType implements java.io.Serializable {
      * Method readResolve. will be called during deserialization to
      * replace the deserialized object with the correct constant
      * instance.
-     * 
+     *
      * @return this deserialized object
      */
     private Object readResolve(
@@ -185,7 +181,7 @@ public class SimpleOperatorType implements java.io.Serializable {
     /**
      * Method toString.Returns the String representation of this
      * SimpleOperatorType
-     * 
+     *
      * @return the String representation of this SimpleOperatorType
      */
     public String toString(
@@ -196,7 +192,7 @@ public class SimpleOperatorType implements java.io.Serializable {
     /**
      * Method valueOf.Returns a new SimpleOperatorType based on the
      * given String value.
-     * 
+     *
      * @param string
      * @return the SimpleOperatorType value of parameter 'string'
      */

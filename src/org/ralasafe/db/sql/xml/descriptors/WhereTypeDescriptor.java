@@ -1,32 +1,28 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: WhereTypeDescriptor.java,v 1.1 2010/07/09 08:17:18 back Exp $
  */
-
 package org.ralasafe.db.sql.xml.descriptors;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import org.ralasafe.db.sql.xml.WhereType;
 
 /**
  * Class WhereTypeDescriptor.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:18 $
  */
 public class WhereTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -55,43 +51,43 @@ public class WhereTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDesc
     private org.exolab.castor.xml.XMLFieldDescriptor _identity;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public WhereTypeDescriptor() {
         super();
         _xmlName = "WhereType";
         _elementDefinition = false;
-        
+
         //-- set grouping compositor
         setCompositorAsSequence();
-        org.exolab.castor.xml.util.XMLFieldDescriptorImpl  desc           = null;
-        org.exolab.castor.mapping.FieldHandler             handler        = null;
-        org.exolab.castor.xml.FieldValidator               fieldValidator = null;
+        org.exolab.castor.xml.util.XMLFieldDescriptorImpl desc = null;
+        org.exolab.castor.mapping.FieldHandler handler = null;
+        org.exolab.castor.xml.FieldValidator fieldValidator = null;
         //-- initialize attribute descriptors
-        
+
         //-- initialize element descriptors
-        
+
         //-- _expressionGroup
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.ExpressionGroup.class, "_expressionGroup", "expressionGroup", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 WhereType target = (WhereType) object;
                 return target.getExpressionGroup();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     WhereType target = (WhereType) object;
-                    target.setExpressionGroup( (org.ralasafe.db.sql.xml.ExpressionGroup) value);
+                    target.setExpressionGroup((org.ralasafe.db.sql.xml.ExpressionGroup) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.ExpressionGroup();
             }
@@ -102,7 +98,7 @@ public class WhereTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDesc
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _expressionGroup
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
@@ -112,13 +108,13 @@ public class WhereTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDesc
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method getAccessMode.
-     * 
+     *
      * @return the access mode specified for this class.
      */
     public org.exolab.castor.mapping.AccessMode getAccessMode(
@@ -128,9 +124,9 @@ public class WhereTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDesc
 
     /**
      * Method getIdentity.
-     * 
+     *
      * @return the identity field, null if this class has no
-     * identity.
+     *         identity.
      */
     public org.exolab.castor.mapping.FieldDescriptor getIdentity(
     ) {
@@ -139,7 +135,7 @@ public class WhereTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDesc
 
     /**
      * Method getJavaClass.
-     * 
+     *
      * @return the Java class represented by this descriptor.
      */
     public Class getJavaClass(
@@ -149,7 +145,7 @@ public class WhereTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDesc
 
     /**
      * Method getNameSpacePrefix.
-     * 
+     *
      * @return the namespace prefix to use when marshaling as XML.
      */
     public String getNameSpacePrefix(
@@ -159,9 +155,9 @@ public class WhereTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDesc
 
     /**
      * Method getNameSpaceURI.
-     * 
+     *
      * @return the namespace URI used when marshaling and
-     * unmarshaling as XML.
+     *         unmarshaling as XML.
      */
     public String getNameSpaceURI(
     ) {
@@ -170,9 +166,9 @@ public class WhereTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDesc
 
     /**
      * Method getValidator.
-     * 
+     *
      * @return a specific validator for the class described by this
-     * ClassDescriptor.
+     *         ClassDescriptor.
      */
     public org.exolab.castor.xml.TypeValidator getValidator(
     ) {
@@ -181,7 +177,7 @@ public class WhereTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDesc
 
     /**
      * Method getXMLName.
-     * 
+     *
      * @return the XML Name for the Class being described.
      */
     public String getXMLName(
@@ -191,10 +187,10 @@ public class WhereTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDesc
 
     /**
      * Method isElementDefinition.
-     * 
+     *
      * @return true if XML schema definition of this Class is that
-     * of a global
-     * element or element with anonymous type definition.
+     *         of a global
+     *         element or element with anonymous type definition.
      */
     public boolean isElementDefinition(
     ) {

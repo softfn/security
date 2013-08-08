@@ -1,32 +1,28 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: FromDescriptor.java,v 1.1 2010/07/09 08:17:20 back Exp $
  */
-
 package org.ralasafe.db.sql.xml.descriptors;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import org.ralasafe.db.sql.xml.From;
 
 /**
  * Class FromDescriptor.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:20 $
  */
 public class FromDescriptor extends org.ralasafe.db.sql.xml.descriptors.FromTypeDescriptor {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -55,8 +51,8 @@ public class FromDescriptor extends org.ralasafe.db.sql.xml.descriptors.FromType
     private org.exolab.castor.xml.XMLFieldDescriptor _identity;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public FromDescriptor() {
@@ -67,13 +63,13 @@ public class FromDescriptor extends org.ralasafe.db.sql.xml.descriptors.FromType
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method getAccessMode.
-     * 
+     *
      * @return the access mode specified for this class.
      */
     public org.exolab.castor.mapping.AccessMode getAccessMode(
@@ -83,9 +79,9 @@ public class FromDescriptor extends org.ralasafe.db.sql.xml.descriptors.FromType
 
     /**
      * Method getIdentity.
-     * 
+     *
      * @return the identity field, null if this class has no
-     * identity.
+     *         identity.
      */
     public org.exolab.castor.mapping.FieldDescriptor getIdentity(
     ) {
@@ -97,7 +93,7 @@ public class FromDescriptor extends org.ralasafe.db.sql.xml.descriptors.FromType
 
     /**
      * Method getJavaClass.
-     * 
+     *
      * @return the Java class represented by this descriptor.
      */
     public Class getJavaClass(
@@ -107,7 +103,7 @@ public class FromDescriptor extends org.ralasafe.db.sql.xml.descriptors.FromType
 
     /**
      * Method getNameSpacePrefix.
-     * 
+     *
      * @return the namespace prefix to use when marshaling as XML.
      */
     public String getNameSpacePrefix(
@@ -117,9 +113,9 @@ public class FromDescriptor extends org.ralasafe.db.sql.xml.descriptors.FromType
 
     /**
      * Method getNameSpaceURI.
-     * 
+     *
      * @return the namespace URI used when marshaling and
-     * unmarshaling as XML.
+     *         unmarshaling as XML.
      */
     public String getNameSpaceURI(
     ) {
@@ -128,9 +124,9 @@ public class FromDescriptor extends org.ralasafe.db.sql.xml.descriptors.FromType
 
     /**
      * Method getValidator.
-     * 
+     *
      * @return a specific validator for the class described by this
-     * ClassDescriptor.
+     *         ClassDescriptor.
      */
     public org.exolab.castor.xml.TypeValidator getValidator(
     ) {
@@ -139,7 +135,7 @@ public class FromDescriptor extends org.ralasafe.db.sql.xml.descriptors.FromType
 
     /**
      * Method getXMLName.
-     * 
+     *
      * @return the XML Name for the Class being described.
      */
     public String getXMLName(
@@ -149,10 +145,10 @@ public class FromDescriptor extends org.ralasafe.db.sql.xml.descriptors.FromType
 
     /**
      * Method isElementDefinition.
-     * 
+     *
      * @return true if XML schema definition of this Class is that
-     * of a global
-     * element or element with anonymous type definition.
+     *         of a global
+     *         element or element with anonymous type definition.
      */
     public boolean isElementDefinition(
     ) {

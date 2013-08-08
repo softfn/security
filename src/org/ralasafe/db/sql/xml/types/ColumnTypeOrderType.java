@@ -1,32 +1,28 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: ColumnTypeOrderType.java,v 1.1 2010/07/09 08:17:54 back Exp $
  */
-
 package org.ralasafe.db.sql.xml.types;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import java.util.Hashtable;
 
 /**
  * Class ColumnTypeOrderType.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:54 $
  */
 public class ColumnTypeOrderType implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -65,8 +61,8 @@ public class ColumnTypeOrderType implements java.io.Serializable {
     private String stringValue = null;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     private ColumnTypeOrderType(final int type, final String value) {
@@ -76,16 +72,16 @@ public class ColumnTypeOrderType implements java.io.Serializable {
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method enumerate.Returns an enumeration of all possible
      * instances of ColumnTypeOrderType
-     * 
+     *
      * @return an Enumeration over all possible instances of
-     * ColumnTypeOrderType
+     *         ColumnTypeOrderType
      */
     public static java.util.Enumeration enumerate(
     ) {
@@ -94,7 +90,7 @@ public class ColumnTypeOrderType implements java.io.Serializable {
 
     /**
      * Method getType.Returns the type of this ColumnTypeOrderType
-     * 
+     *
      * @return the type of this ColumnTypeOrderType
      */
     public int getType(
@@ -104,7 +100,7 @@ public class ColumnTypeOrderType implements java.io.Serializable {
 
     /**
      * Method init.
-     * 
+     *
      * @return the initialized Hashtable for the member table
      */
     private static Hashtable init(
@@ -119,7 +115,7 @@ public class ColumnTypeOrderType implements java.io.Serializable {
      * Method readResolve. will be called during deserialization to
      * replace the deserialized object with the correct constant
      * instance.
-     * 
+     *
      * @return this deserialized object
      */
     private Object readResolve(
@@ -130,7 +126,7 @@ public class ColumnTypeOrderType implements java.io.Serializable {
     /**
      * Method toString.Returns the String representation of this
      * ColumnTypeOrderType
-     * 
+     *
      * @return the String representation of this ColumnTypeOrderType
      */
     public String toString(
@@ -141,7 +137,7 @@ public class ColumnTypeOrderType implements java.io.Serializable {
     /**
      * Method valueOf.Returns a new ColumnTypeOrderType based on
      * the given String value.
-     * 
+     *
      * @param string
      * @return the ColumnTypeOrderType value of parameter 'string'
      */

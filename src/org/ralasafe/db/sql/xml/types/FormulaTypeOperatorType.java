@@ -1,32 +1,28 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: FormulaTypeOperatorType.java,v 1.1 2010/07/09 08:17:54 back Exp $
  */
-
 package org.ralasafe.db.sql.xml.types;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import java.util.Hashtable;
 
 /**
  * Class FormulaTypeOperatorType.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:54 $
  */
 public class FormulaTypeOperatorType implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -85,8 +81,8 @@ public class FormulaTypeOperatorType implements java.io.Serializable {
     private String stringValue = null;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     private FormulaTypeOperatorType(final int type, final String value) {
@@ -96,16 +92,16 @@ public class FormulaTypeOperatorType implements java.io.Serializable {
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method enumerate.Returns an enumeration of all possible
      * instances of FormulaTypeOperatorType
-     * 
+     *
      * @return an Enumeration over all possible instances of
-     * FormulaTypeOperatorType
+     *         FormulaTypeOperatorType
      */
     public static java.util.Enumeration enumerate(
     ) {
@@ -115,7 +111,7 @@ public class FormulaTypeOperatorType implements java.io.Serializable {
     /**
      * Method getType.Returns the type of this
      * FormulaTypeOperatorType
-     * 
+     *
      * @return the type of this FormulaTypeOperatorType
      */
     public int getType(
@@ -125,7 +121,7 @@ public class FormulaTypeOperatorType implements java.io.Serializable {
 
     /**
      * Method init.
-     * 
+     *
      * @return the initialized Hashtable for the member table
      */
     private static Hashtable init(
@@ -142,7 +138,7 @@ public class FormulaTypeOperatorType implements java.io.Serializable {
      * Method readResolve. will be called during deserialization to
      * replace the deserialized object with the correct constant
      * instance.
-     * 
+     *
      * @return this deserialized object
      */
     private Object readResolve(
@@ -153,9 +149,9 @@ public class FormulaTypeOperatorType implements java.io.Serializable {
     /**
      * Method toString.Returns the String representation of this
      * FormulaTypeOperatorType
-     * 
+     *
      * @return the String representation of this
-     * FormulaTypeOperatorType
+     *         FormulaTypeOperatorType
      */
     public String toString(
     ) {
@@ -165,10 +161,10 @@ public class FormulaTypeOperatorType implements java.io.Serializable {
     /**
      * Method valueOf.Returns a new FormulaTypeOperatorType based
      * on the given String value.
-     * 
+     *
      * @param string
      * @return the FormulaTypeOperatorType value of parameter
-     * 'string'
+     *         'string'
      */
     public static FormulaTypeOperatorType valueOf(
             final String string) {

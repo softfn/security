@@ -1,32 +1,28 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: ValueDescriptor.java,v 1.1 2010/07/09 08:17:18 back Exp $
  */
-
 package org.ralasafe.db.sql.xml.descriptors;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import org.ralasafe.db.sql.xml.Value;
 
 /**
  * Class ValueDescriptor.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:18 $
  */
 public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -55,43 +51,43 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
     private org.exolab.castor.xml.XMLFieldDescriptor _identity;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public ValueDescriptor() {
         super();
         _xmlName = "Value";
         _elementDefinition = false;
-        
+
         //-- set grouping compositor
         setCompositorAsChoice();
-        org.exolab.castor.xml.util.XMLFieldDescriptorImpl  desc           = null;
-        org.exolab.castor.mapping.FieldHandler             handler        = null;
-        org.exolab.castor.xml.FieldValidator               fieldValidator = null;
+        org.exolab.castor.xml.util.XMLFieldDescriptorImpl desc = null;
+        org.exolab.castor.mapping.FieldHandler handler = null;
+        org.exolab.castor.xml.FieldValidator fieldValidator = null;
         //-- initialize attribute descriptors
-        
+
         //-- initialize element descriptors
-        
+
         //-- _simpleValue
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.SimpleValue.class, "_simpleValue", "simpleValue", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 Value target = (Value) object;
                 return target.getSimpleValue();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     Value target = (Value) object;
-                    target.setSimpleValue( (org.ralasafe.db.sql.xml.SimpleValue) value);
+                    target.setSimpleValue((org.ralasafe.db.sql.xml.SimpleValue) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.SimpleValue();
             }
@@ -102,7 +98,7 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _simpleValue
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
@@ -112,22 +108,22 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
         //-- _contextValue
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.ContextValue.class, "_contextValue", "contextValue", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 Value target = (Value) object;
                 return target.getContextValue();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     Value target = (Value) object;
-                    target.setContextValue( (org.ralasafe.db.sql.xml.ContextValue) value);
+                    target.setContextValue((org.ralasafe.db.sql.xml.ContextValue) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.ContextValue();
             }
@@ -138,7 +134,7 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _contextValue
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
@@ -148,22 +144,22 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
         //-- _hintValue
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.HintValue.class, "_hintValue", "hintValue", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 Value target = (Value) object;
                 return target.getHintValue();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     Value target = (Value) object;
-                    target.setHintValue( (org.ralasafe.db.sql.xml.HintValue) value);
+                    target.setHintValue((org.ralasafe.db.sql.xml.HintValue) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.HintValue();
             }
@@ -174,7 +170,7 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _hintValue
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
@@ -184,22 +180,22 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
         //-- _userValue
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.UserValue.class, "_userValue", "userValue", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 Value target = (Value) object;
                 return target.getUserValue();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     Value target = (Value) object;
-                    target.setUserValue( (org.ralasafe.db.sql.xml.UserValue) value);
+                    target.setUserValue((org.ralasafe.db.sql.xml.UserValue) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.UserValue();
             }
@@ -210,7 +206,7 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _userValue
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
@@ -220,13 +216,13 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method getAccessMode.
-     * 
+     *
      * @return the access mode specified for this class.
      */
     public org.exolab.castor.mapping.AccessMode getAccessMode(
@@ -236,9 +232,9 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
 
     /**
      * Method getIdentity.
-     * 
+     *
      * @return the identity field, null if this class has no
-     * identity.
+     *         identity.
      */
     public org.exolab.castor.mapping.FieldDescriptor getIdentity(
     ) {
@@ -247,7 +243,7 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
 
     /**
      * Method getJavaClass.
-     * 
+     *
      * @return the Java class represented by this descriptor.
      */
     public Class getJavaClass(
@@ -257,7 +253,7 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
 
     /**
      * Method getNameSpacePrefix.
-     * 
+     *
      * @return the namespace prefix to use when marshaling as XML.
      */
     public String getNameSpacePrefix(
@@ -267,9 +263,9 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
 
     /**
      * Method getNameSpaceURI.
-     * 
+     *
      * @return the namespace URI used when marshaling and
-     * unmarshaling as XML.
+     *         unmarshaling as XML.
      */
     public String getNameSpaceURI(
     ) {
@@ -278,9 +274,9 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
 
     /**
      * Method getValidator.
-     * 
+     *
      * @return a specific validator for the class described by this
-     * ClassDescriptor.
+     *         ClassDescriptor.
      */
     public org.exolab.castor.xml.TypeValidator getValidator(
     ) {
@@ -289,7 +285,7 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
 
     /**
      * Method getXMLName.
-     * 
+     *
      * @return the XML Name for the Class being described.
      */
     public String getXMLName(
@@ -299,10 +295,10 @@ public class ValueDescriptor extends org.exolab.castor.xml.util.XMLClassDescript
 
     /**
      * Method isElementDefinition.
-     * 
+     *
      * @return true if XML schema definition of this Class is that
-     * of a global
-     * element or element with anonymous type definition.
+     *         of a global
+     *         element or element with anonymous type definition.
      */
     public boolean isElementDefinition(
     ) {

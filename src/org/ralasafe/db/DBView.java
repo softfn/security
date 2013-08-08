@@ -1,7 +1,3 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
 package org.ralasafe.db;
 
 import java.sql.Connection;
@@ -25,308 +21,307 @@ import org.ralasafe.util.StringUtil;
 
 /**
  * Reflect schema's table and view infos.
- * The table or view is omited which name starts with '$'. 
- * We think it's a system table. 
- * 
+ * The table or view is omited which name starts with '$'.
+ * We think it's a system table.
+ *
  * @author back
- * 
  */
 public class DBView {
-	private static final String[] tableType = new String[] { "TABLE" };
-	private static final String[] viewType = new String[] { "VIEW" };
-	private static final Log log=LogFactory.getLog( DBView.class );
-	
-	public static String getDefaultSchema(String dsName) {
-		Connection conn = DBPower.getConnection(dsName);
-		try {
-			return DBUtil.getDefaultSchema(conn);
-		} catch (SQLException e) {
-			log.error( "", e );
-			return "";
-		} finally {
-			DBUtil.close(conn);
-		}
-	}
+    private static final String[] tableType = new String[]{"TABLE"};
+    private static final String[] viewType = new String[]{"VIEW"};
+    private static final Log log = LogFactory.getLog(DBView.class);
 
-	public static TableView getTable(String dsName, String tableName) {
-		Connection conn = null;
+    public static String getDefaultSchema(String dsName) {
+        Connection conn = DBPower.getConnection(dsName);
+        try {
+            return DBUtil.getDefaultSchema(conn);
+        } catch (SQLException e) {
+            log.error("", e);
+            return "";
+        } finally {
+            DBUtil.close(conn);
+        }
+    }
 
-		try {
-			conn = DBPower.getConnection(dsName);
+    public static TableView getTable(String dsName, String tableName) {
+        Connection conn = null;
 
-			return getTable(conn, dsName, null, tableName);
-		} catch (SQLException e) {
-			log.error( "Failed to get definition of " + "table/view '"
-					+ tableName, e );
-			throw new DBLevelException(e);
-		} finally {
-			DBUtil.close(conn);
-		}
-	}
-	
-	public static TableView getTable(String dsName, String schema, String tableName) {
-		Connection conn = null;
+        try {
+            conn = DBPower.getConnection(dsName);
 
-		try {
-			conn = DBPower.getConnection(dsName);
+            return getTable(conn, dsName, null, tableName);
+        } catch (SQLException e) {
+            log.error("Failed to get definition of " + "table/view '"
+                    + tableName, e);
+            throw new DBLevelException(e);
+        } finally {
+            DBUtil.close(conn);
+        }
+    }
 
-			return getTable(conn, dsName, schema, tableName);
-		} catch (SQLException e) {
-			log.error( "Failed to get definition of " + "table/view '"
-					+ schema + "." + tableName, e );
-			throw new DBLevelException(e);
-		} finally {
-			DBUtil.close(conn);
-		}
-	}
+    public static TableView getTable(String dsName, String schema, String tableName) {
+        Connection conn = null;
 
-	private static TableView getTable(Connection conn, String dsName,
-			String schema, String tableName) throws SQLException {
-		String mySchema = "";
-		if (!StringUtil.isEmpty(schema)) {
-			mySchema = schema + ".";
-		}
+        try {
+            conn = DBPower.getConnection(dsName);
 
-		if( log.isDebugEnabled() ) {
-			log.debug( "Get table/view definition: dsName=" + dsName 
-					+ ", table/view Name=" + mySchema+tableName );
-		}
-		
-		Statement stmt = null;
-		ResultSet rs = null;
-		ResultSet primaryKeys = null;
+            return getTable(conn, dsName, schema, tableName);
+        } catch (SQLException e) {
+            log.error("Failed to get definition of " + "table/view '"
+                    + schema + "." + tableName, e);
+            throw new DBLevelException(e);
+        } finally {
+            DBUtil.close(conn);
+        }
+    }
 
-		try {
-			stmt = conn.createStatement();
+    private static TableView getTable(Connection conn, String dsName,
+                                      String schema, String tableName) throws SQLException {
+        String mySchema = "";
+        if (!StringUtil.isEmpty(schema)) {
+            mySchema = schema + ".";
+        }
 
-			rs = stmt.executeQuery("select * from " + mySchema + tableName
-					+ " where 1=2");
-			ResultSetMetaData metaData = rs.getMetaData();
+        if (log.isDebugEnabled()) {
+            log.debug("Get table/view definition: dsName=" + dsName
+                    + ", table/view Name=" + mySchema + tableName);
+        }
 
-			TableView table = new TableView();
-			table.setSchema(schema);
-			table.setName(tableName);
+        Statement stmt = null;
+        ResultSet rs = null;
+        ResultSet primaryKeys = null;
 
-			DatabaseMetaData metaData2 = conn.getMetaData();
-			String databaseProductName = DBUtil.getDatabaseProductName(conn);
+        try {
+            stmt = conn.createStatement();
 
-			if (databaseProductName == DBUtil.MYSQL) {
-				primaryKeys = metaData2.getPrimaryKeys(schema, null, tableName);
-			} else {
-				primaryKeys = metaData2.getPrimaryKeys(null, null, tableName);
-			}
+            rs = stmt.executeQuery("select * from " + mySchema + tableName
+                    + " where 1=2");
+            ResultSetMetaData metaData = rs.getMetaData();
 
-			Map pkColumnViewMap = new HashMap();
-			while (primaryKeys.next()) {
-				pkColumnViewMap.put(primaryKeys.getString("COLUMN_NAME"), null);
-			}
+            TableView table = new TableView();
+            table.setSchema(schema);
+            table.setName(tableName);
 
-			List columnList = new ArrayList(metaData.getColumnCount());
-			for (int i = 1, columnCount = metaData.getColumnCount(); i <= columnCount; i++) {
-				ColumnView column = new ColumnView();
-				String columnName = metaData.getColumnName(i);
-				column.setName(columnName);
-				String sqlType = metaData.getColumnTypeName(i);
+            DatabaseMetaData metaData2 = conn.getMetaData();
+            String databaseProductName = DBUtil.getDatabaseProductName(conn);
 
-				if (sqlType.equalsIgnoreCase("blob")
-						|| sqlType.equalsIgnoreCase("clob")
-						|| sqlType.equalsIgnoreCase("text")) {
-					// DO NOTHING
-				} else {
-					int precision = metaData.getPrecision(i);
-					int scale = metaData.getScale(i);
+            if (databaseProductName == DBUtil.MYSQL) {
+                primaryKeys = metaData2.getPrimaryKeys(schema, null, tableName);
+            } else {
+                primaryKeys = metaData2.getPrimaryKeys(null, null, tableName);
+            }
 
-					if (precision != 0) {
-						if (scale == 0) {
-							sqlType = sqlType + "(" + precision + ")";
-						} else {
-							sqlType = sqlType + "(" + precision + "," + scale
-									+ ")";
-						}
-					}
-				}
-				column.setSqlType(sqlType);
-				columnList.add(column);
+            Map pkColumnViewMap = new HashMap();
+            while (primaryKeys.next()) {
+                pkColumnViewMap.put(primaryKeys.getString("COLUMN_NAME"), null);
+            }
 
-				// it's a primary key?
-				if (pkColumnViewMap.containsKey(columnName)) {
-					pkColumnViewMap.put(columnName, column);
-				}
-			}
+            List columnList = new ArrayList(metaData.getColumnCount());
+            for (int i = 1, columnCount = metaData.getColumnCount(); i <= columnCount; i++) {
+                ColumnView column = new ColumnView();
+                String columnName = metaData.getColumnName(i);
+                column.setName(columnName);
+                String sqlType = metaData.getColumnTypeName(i);
 
-			table.setColumnViews(columnList);
+                if (sqlType.equalsIgnoreCase("blob")
+                        || sqlType.equalsIgnoreCase("clob")
+                        || sqlType.equalsIgnoreCase("text")) {
+                    // DO NOTHING
+                } else {
+                    int precision = metaData.getPrecision(i);
+                    int scale = metaData.getScale(i);
 
-			// sometimes, oracle jdbc driver returns pk info is redundance, 
-			// actually the column does exist at all.  Clear them.
-			clearInvalidPK(pkColumnViewMap);
-			
-			if (pkColumnViewMap.size() > 0) {
-				table.setPkColumnViews(pkColumnViewMap.values());
-			}
-			return table;
-		} finally {
-			DBUtil.close(primaryKeys);
-			DBUtil.close(rs);
-			DBUtil.close(stmt);
-		}
-	}
+                    if (precision != 0) {
+                        if (scale == 0) {
+                            sqlType = sqlType + "(" + precision + ")";
+                        } else {
+                            sqlType = sqlType + "(" + precision + "," + scale
+                                    + ")";
+                        }
+                    }
+                }
+                column.setSqlType(sqlType);
+                columnList.add(column);
 
-	private static void clearInvalidPK(Map pkColumnViewMap) {
-		Iterator itr = pkColumnViewMap.entrySet().iterator();
-		while (itr.hasNext()) {
-			Map.Entry entry = (Map.Entry) itr.next();
-			if (entry.getValue() == null) {
-				itr.remove();
-			}
-		}
-	}
+                // it's a primary key?
+                if (pkColumnViewMap.containsKey(columnName)) {
+                    pkColumnViewMap.put(columnName, column);
+                }
+            }
 
-	public static String[] getSchemas(String dsName) {
-		DataSource ds = DBPower.getDataSource(dsName);
-		if (ds.isShowAllSchemas()) {
-			return getAllSchemasFromDB(dsName);
-		} else {
-			return ds.getSchemas();
-		}
-	}
+            table.setColumnViews(columnList);
 
-	public static String[] getAllSchemasFromDB(String dsName) {
-		Connection conn = null;
-		ResultSet rs = null;
+            // sometimes, oracle jdbc driver returns pk info is redundance,
+            // actually the column does exist at all.  Clear them.
+            clearInvalidPK(pkColumnViewMap);
 
-		try {
-			conn = DBPower.getConnection(dsName);
+            if (pkColumnViewMap.size() > 0) {
+                table.setPkColumnViews(pkColumnViewMap.values());
+            }
+            return table;
+        } finally {
+            DBUtil.close(primaryKeys);
+            DBUtil.close(rs);
+            DBUtil.close(stmt);
+        }
+    }
 
-			DatabaseMetaData metaData = conn.getMetaData();
+    private static void clearInvalidPK(Map pkColumnViewMap) {
+        Iterator itr = pkColumnViewMap.entrySet().iterator();
+        while (itr.hasNext()) {
+            Map.Entry entry = (Map.Entry) itr.next();
+            if (entry.getValue() == null) {
+                itr.remove();
+            }
+        }
+    }
 
-			String databaseProductName = DBUtil.getDatabaseProductName(conn);
-			if (databaseProductName == DBUtil.MYSQL
-					|| databaseProductName == DBUtil.SQLSERVER) {
-				rs = metaData.getCatalogs();
-			} else {
-				rs = metaData.getSchemas();
-			}
+    public static String[] getSchemas(String dsName) {
+        DataSource ds = DBPower.getDataSource(dsName);
+        if (ds.isShowAllSchemas()) {
+            return getAllSchemasFromDB(dsName);
+        } else {
+            return ds.getSchemas();
+        }
+    }
 
-			List result = new LinkedList();
-			while (rs.next()) {
-				String name = rs.getString(1);
-				result.add(name);
-			}
+    public static String[] getAllSchemasFromDB(String dsName) {
+        Connection conn = null;
+        ResultSet rs = null;
 
-			String[] names = new String[result.size()];
-			Iterator itr = result.iterator();
-			for (int i = 0; i < names.length; i++) {
-				names[i] = (String) itr.next();
-			}
-			return names;
-		} catch (SQLException e) {
-			log.error( "", e );
-			throw new DBLevelException(e);
-		} finally {
-			DBUtil.close(rs);
-			DBUtil.close(conn);
-		}
-	}
+        try {
+            conn = DBPower.getConnection(dsName);
 
-	public static String[] getTableNames(String dsName, String schema) {
-		return getObjectNames(dsName, schema, tableType);
-	}
+            DatabaseMetaData metaData = conn.getMetaData();
 
-	private static String[] getObjectNames(String dsName, String schema,
-			String[] objectTypes) {
-		Connection conn = null;
-		ResultSet tables = null;
+            String databaseProductName = DBUtil.getDatabaseProductName(conn);
+            if (databaseProductName == DBUtil.MYSQL
+                    || databaseProductName == DBUtil.SQLSERVER) {
+                rs = metaData.getCatalogs();
+            } else {
+                rs = metaData.getSchemas();
+            }
 
-		try {
-			conn = DBPower.getConnection(dsName);
+            List result = new LinkedList();
+            while (rs.next()) {
+                String name = rs.getString(1);
+                result.add(name);
+            }
 
-			DatabaseMetaData metaData = conn.getMetaData();
+            String[] names = new String[result.size()];
+            Iterator itr = result.iterator();
+            for (int i = 0; i < names.length; i++) {
+                names[i] = (String) itr.next();
+            }
+            return names;
+        } catch (SQLException e) {
+            log.error("", e);
+            throw new DBLevelException(e);
+        } finally {
+            DBUtil.close(rs);
+            DBUtil.close(conn);
+        }
+    }
 
-			String databaseProductName = DBUtil.getDatabaseProductName(conn);
-			if (databaseProductName == DBUtil.MYSQL
-					|| databaseProductName == DBUtil.SQLSERVER) {
-				tables = metaData.getTables(schema, null, null, objectTypes);
-			} else if (databaseProductName == DBUtil.ORACLE) {
-				tables = metaData.getTables(null, null, null, objectTypes);
-			} else {
-				tables = metaData.getTables(null, schema, null, objectTypes);
-			}
+    public static String[] getTableNames(String dsName, String schema) {
+        return getObjectNames(dsName, schema, tableType);
+    }
 
-			List result = new LinkedList();
-			while (tables.next()) {
-				String tableName = tables.getString("TABLE_NAME");
+    private static String[] getObjectNames(String dsName, String schema,
+                                           String[] objectTypes) {
+        Connection conn = null;
+        ResultSet tables = null;
 
-				if (databaseProductName == DBUtil.ORACLE) {
-					String s = tables.getString("TABLE_SCHEM");
-					if (s.equalsIgnoreCase(schema)) {
-						result.add(tableName);
-					}
-				} else if (databaseProductName == DBUtil.SQLSERVER) {
-					String s = tables.getString("TABLE_SCHEM");
-					tableName = s + "." + tableName;
-					result.add(tableName);
-				} else {
-					result.add(tableName);
-				}
-			}
+        try {
+            conn = DBPower.getConnection(dsName);
 
-			String[] names = new String[result.size()];
-			Iterator itr = result.iterator();
-			for (int i = 0; i < names.length; i++) {
-				names[i] = (String) itr.next();
-			}
-			return names;
-		} catch (SQLException e) {
-			log.error( "", e );
-			throw new DBLevelException(e);
-		} finally {
-			DBUtil.close(tables);
-			DBUtil.close(conn);
-		}
-	}
+            DatabaseMetaData metaData = conn.getMetaData();
 
-	public static Collection getTables(String dsName, String schema) {
-		String[] tableNames = getTableNames(dsName, schema);
-		return getTables(dsName, schema, tableNames);
-	}
+            String databaseProductName = DBUtil.getDatabaseProductName(conn);
+            if (databaseProductName == DBUtil.MYSQL
+                    || databaseProductName == DBUtil.SQLSERVER) {
+                tables = metaData.getTables(schema, null, null, objectTypes);
+            } else if (databaseProductName == DBUtil.ORACLE) {
+                tables = metaData.getTables(null, null, null, objectTypes);
+            } else {
+                tables = metaData.getTables(null, schema, null, objectTypes);
+            }
 
-	public static Collection getTables(String dsName, String schema,
-			String[] tableNames) {
-		Connection conn = DBPower.getConnection(dsName);
-		try {
-			List tables = new ArrayList();
-			for (int i = 0; i < tableNames.length; i++) {
-				// omit system tables like $sys_
-				if (tableNames[i].indexOf("$") >= 0) {
-					continue;
-				}
+            List result = new LinkedList();
+            while (tables.next()) {
+                String tableName = tables.getString("TABLE_NAME");
 
-				try {
-					TableView table = getTable(conn, dsName, schema,
-							tableNames[i]);
-					tables.add(table);
-				} catch (SQLException e) {
-					log.error( "Failed to get definition in schema '"
-							+ schema + "'." + "table/view:" + tableNames[i], e );
-				}
-			}
-			return tables;
-		} finally {
-			DBUtil.close(conn);
-		}
-	}
+                if (databaseProductName == DBUtil.ORACLE) {
+                    String s = tables.getString("TABLE_SCHEM");
+                    if (s.equalsIgnoreCase(schema)) {
+                        result.add(tableName);
+                    }
+                } else if (databaseProductName == DBUtil.SQLSERVER) {
+                    String s = tables.getString("TABLE_SCHEM");
+                    tableName = s + "." + tableName;
+                    result.add(tableName);
+                } else {
+                    result.add(tableName);
+                }
+            }
 
-	public static String[] getViewNames(String dsName, String schema) {
-		return getObjectNames(dsName, schema, viewType);
-	}
+            String[] names = new String[result.size()];
+            Iterator itr = result.iterator();
+            for (int i = 0; i < names.length; i++) {
+                names[i] = (String) itr.next();
+            }
+            return names;
+        } catch (SQLException e) {
+            log.error("", e);
+            throw new DBLevelException(e);
+        } finally {
+            DBUtil.close(tables);
+            DBUtil.close(conn);
+        }
+    }
 
-	public static Collection getViewTables(String dsName, String schema,
-			String[] viewNames) {
-		return getTables(dsName, schema, viewNames);
-	}
+    public static Collection getTables(String dsName, String schema) {
+        String[] tableNames = getTableNames(dsName, schema);
+        return getTables(dsName, schema, tableNames);
+    }
 
-	public static Collection getViewTables(String dsName, String schema) {
-		String[] viewNames = getViewNames(dsName, schema);
-		return getTables(dsName, schema, viewNames);
-	}
+    public static Collection getTables(String dsName, String schema,
+                                       String[] tableNames) {
+        Connection conn = DBPower.getConnection(dsName);
+        try {
+            List tables = new ArrayList();
+            for (int i = 0; i < tableNames.length; i++) {
+                // omit system tables like $sys_
+                if (tableNames[i].indexOf("$") >= 0) {
+                    continue;
+                }
+
+                try {
+                    TableView table = getTable(conn, dsName, schema,
+                            tableNames[i]);
+                    tables.add(table);
+                } catch (SQLException e) {
+                    log.error("Failed to get definition in schema '"
+                            + schema + "'." + "table/view:" + tableNames[i], e);
+                }
+            }
+            return tables;
+        } finally {
+            DBUtil.close(conn);
+        }
+    }
+
+    public static String[] getViewNames(String dsName, String schema) {
+        return getObjectNames(dsName, schema, viewType);
+    }
+
+    public static Collection getViewTables(String dsName, String schema,
+                                           String[] viewNames) {
+        return getTables(dsName, schema, viewNames);
+    }
+
+    public static Collection getViewTables(String dsName, String schema) {
+        String[] viewNames = getViewNames(dsName, schema);
+        return getTables(dsName, schema, viewNames);
+    }
 }

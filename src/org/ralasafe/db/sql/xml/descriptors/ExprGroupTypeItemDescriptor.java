@@ -1,32 +1,28 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: ExprGroupTypeItemDescriptor.java,v 1.1 2010/07/09 08:17:19 back Exp $
  */
-
 package org.ralasafe.db.sql.xml.descriptors;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import org.ralasafe.db.sql.xml.ExprGroupTypeItem;
 
 /**
  * Class ExprGroupTypeItemDescriptor.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:19 $
  */
 public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -55,43 +51,43 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
     private org.exolab.castor.xml.XMLFieldDescriptor _identity;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public ExprGroupTypeItemDescriptor() {
         super();
         _xmlName = "ExprGroupType";
         _elementDefinition = false;
-        
+
         //-- set grouping compositor
         setCompositorAsChoice();
-        org.exolab.castor.xml.util.XMLFieldDescriptorImpl  desc           = null;
-        org.exolab.castor.mapping.FieldHandler             handler        = null;
-        org.exolab.castor.xml.FieldValidator               fieldValidator = null;
+        org.exolab.castor.xml.util.XMLFieldDescriptorImpl desc = null;
+        org.exolab.castor.mapping.FieldHandler handler = null;
+        org.exolab.castor.xml.FieldValidator fieldValidator = null;
         //-- initialize attribute descriptors
-        
+
         //-- initialize element descriptors
-        
+
         //-- _binaryExpr
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.BinaryExpr.class, "_binaryExpr", "binaryExpr", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ExprGroupTypeItem target = (ExprGroupTypeItem) object;
                 return target.getBinaryExpr();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ExprGroupTypeItem target = (ExprGroupTypeItem) object;
-                    target.setBinaryExpr( (org.ralasafe.db.sql.xml.BinaryExpr) value);
+                    target.setBinaryExpr((org.ralasafe.db.sql.xml.BinaryExpr) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.BinaryExpr();
             }
@@ -101,7 +97,7 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _binaryExpr
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -110,22 +106,22 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
         //-- _inExpr
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.InExpr.class, "_inExpr", "inExpr", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ExprGroupTypeItem target = (ExprGroupTypeItem) object;
                 return target.getInExpr();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ExprGroupTypeItem target = (ExprGroupTypeItem) object;
-                    target.setInExpr( (org.ralasafe.db.sql.xml.InExpr) value);
+                    target.setInExpr((org.ralasafe.db.sql.xml.InExpr) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.InExpr();
             }
@@ -135,7 +131,7 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _inExpr
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -144,22 +140,22 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
         //-- _notInExpr
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.NotInExpr.class, "_notInExpr", "notInExpr", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ExprGroupTypeItem target = (ExprGroupTypeItem) object;
                 return target.getNotInExpr();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ExprGroupTypeItem target = (ExprGroupTypeItem) object;
-                    target.setNotInExpr( (org.ralasafe.db.sql.xml.NotInExpr) value);
+                    target.setNotInExpr((org.ralasafe.db.sql.xml.NotInExpr) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.NotInExpr();
             }
@@ -169,7 +165,7 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _notInExpr
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -178,22 +174,22 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
         //-- _isNullExpr
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.IsNullExpr.class, "_isNullExpr", "isNullExpr", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ExprGroupTypeItem target = (ExprGroupTypeItem) object;
                 return target.getIsNullExpr();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ExprGroupTypeItem target = (ExprGroupTypeItem) object;
-                    target.setIsNullExpr( (org.ralasafe.db.sql.xml.IsNullExpr) value);
+                    target.setIsNullExpr((org.ralasafe.db.sql.xml.IsNullExpr) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.IsNullExpr();
             }
@@ -203,7 +199,7 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _isNullExpr
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -212,22 +208,22 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
         //-- _isNotNullExpr
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.IsNotNullExpr.class, "_isNotNullExpr", "isNotNullExpr", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ExprGroupTypeItem target = (ExprGroupTypeItem) object;
                 return target.getIsNotNullExpr();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ExprGroupTypeItem target = (ExprGroupTypeItem) object;
-                    target.setIsNotNullExpr( (org.ralasafe.db.sql.xml.IsNotNullExpr) value);
+                    target.setIsNotNullExpr((org.ralasafe.db.sql.xml.IsNotNullExpr) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.IsNotNullExpr();
             }
@@ -237,7 +233,7 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _isNotNullExpr
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -246,22 +242,22 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
         //-- _exprGroup
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.ExprGroup.class, "_exprGroup", "exprGroup", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 ExprGroupTypeItem target = (ExprGroupTypeItem) object;
                 return target.getExprGroup();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     ExprGroupTypeItem target = (ExprGroupTypeItem) object;
-                    target.setExprGroup( (org.ralasafe.db.sql.xml.ExprGroup) value);
+                    target.setExprGroup((org.ralasafe.db.sql.xml.ExprGroup) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.ExprGroup();
             }
@@ -271,7 +267,7 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _exprGroup
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -280,13 +276,13 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method getAccessMode.
-     * 
+     *
      * @return the access mode specified for this class.
      */
     public org.exolab.castor.mapping.AccessMode getAccessMode(
@@ -296,9 +292,9 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
 
     /**
      * Method getIdentity.
-     * 
+     *
      * @return the identity field, null if this class has no
-     * identity.
+     *         identity.
      */
     public org.exolab.castor.mapping.FieldDescriptor getIdentity(
     ) {
@@ -307,7 +303,7 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
 
     /**
      * Method getJavaClass.
-     * 
+     *
      * @return the Java class represented by this descriptor.
      */
     public Class getJavaClass(
@@ -317,7 +313,7 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
 
     /**
      * Method getNameSpacePrefix.
-     * 
+     *
      * @return the namespace prefix to use when marshaling as XML.
      */
     public String getNameSpacePrefix(
@@ -327,9 +323,9 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
 
     /**
      * Method getNameSpaceURI.
-     * 
+     *
      * @return the namespace URI used when marshaling and
-     * unmarshaling as XML.
+     *         unmarshaling as XML.
      */
     public String getNameSpaceURI(
     ) {
@@ -338,9 +334,9 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
 
     /**
      * Method getValidator.
-     * 
+     *
      * @return a specific validator for the class described by this
-     * ClassDescriptor.
+     *         ClassDescriptor.
      */
     public org.exolab.castor.xml.TypeValidator getValidator(
     ) {
@@ -349,7 +345,7 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
 
     /**
      * Method getXMLName.
-     * 
+     *
      * @return the XML Name for the Class being described.
      */
     public String getXMLName(
@@ -359,10 +355,10 @@ public class ExprGroupTypeItemDescriptor extends org.exolab.castor.xml.util.XMLC
 
     /**
      * Method isElementDefinition.
-     * 
+     *
      * @return true if XML schema definition of this Class is that
-     * of a global
-     * element or element with anonymous type definition.
+     *         of a global
+     *         element or element with anonymous type definition.
      */
     public boolean isElementDefinition(
     ) {

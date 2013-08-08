@@ -14,45 +14,45 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class ActionParser {
-	private static final String URL_PATTERN="url-pattern";
-	private static final String ACTION_NAME="action-name";
-	private static final String ACTION_MAPPING="action-mapping";
+    private static final String URL_PATTERN = "url-pattern";
+    private static final String ACTION_NAME = "action-name";
+    private static final String ACTION_MAPPING = "action-mapping";
 
-	public Map parse( String path ) {		
-		DocumentBuilderFactory fcty = DocumentBuilderFactory.newInstance();
-		Document document = null;
-		try {
-			DocumentBuilder builder = fcty.newDocumentBuilder();
-			document = builder.parse( path );
-		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		} catch (SAXException e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		} catch (IOException e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		}
-		
-		Element rootEmt = document.getDocumentElement();
-		
-		return parse( rootEmt );
-	}
+    public Map parse(String path) {
+        DocumentBuilderFactory fcty = DocumentBuilderFactory.newInstance();
+        Document document = null;
+        try {
+            DocumentBuilder builder = fcty.newDocumentBuilder();
+            document = builder.parse(path);
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        } catch (SAXException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
 
-	private Map parse( Element rootEmt ) {
-		Map result=new HashMap();
-		
-		NodeList nodeList=rootEmt.getElementsByTagName( ACTION_MAPPING );
-		for( int i=0,size=nodeList.getLength(); i<size; i++ ) {
-			Element item=(Element) nodeList.item( i );
-			
-			String actionName=item.getElementsByTagName( ACTION_NAME ).item( 0 ).getTextContent();
-			String url=item.getElementsByTagName( URL_PATTERN ).item( 0 ).getTextContent();
-			
-			result.put( url, actionName );
-		}		
+        Element rootEmt = document.getDocumentElement();
 
-		return result;
-	}
+        return parse(rootEmt);
+    }
+
+    private Map parse(Element rootEmt) {
+        Map result = new HashMap();
+
+        NodeList nodeList = rootEmt.getElementsByTagName(ACTION_MAPPING);
+        for (int i = 0, size = nodeList.getLength(); i < size; i++) {
+            Element item = (Element) nodeList.item(i);
+
+            String actionName = item.getElementsByTagName(ACTION_NAME).item(0).getTextContent();
+            String url = item.getElementsByTagName(URL_PATTERN).item(0).getTextContent();
+
+            result.put(url, actionName);
+        }
+
+        return result;
+    }
 }

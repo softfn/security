@@ -1,32 +1,28 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: BusinessDataTypeDescriptor.java,v 1.1 2010/07/09 08:17:19 back Exp $
  */
-
 package org.ralasafe.db.sql.xml.descriptors;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import org.ralasafe.db.sql.xml.BusinessDataType;
 
 /**
  * Class BusinessDataTypeDescriptor.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:19 $
  */
 public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -55,42 +51,42 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
     private org.exolab.castor.xml.XMLFieldDescriptor _identity;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public BusinessDataTypeDescriptor() {
         super();
         _xmlName = "BusinessDataType";
         _elementDefinition = false;
-        
+
         //-- set grouping compositor
         setCompositorAsSequence();
-        org.exolab.castor.xml.util.XMLFieldDescriptorImpl  desc           = null;
-        org.exolab.castor.mapping.FieldHandler             handler        = null;
-        org.exolab.castor.xml.FieldValidator               fieldValidator = null;
+        org.exolab.castor.xml.util.XMLFieldDescriptorImpl desc = null;
+        org.exolab.castor.mapping.FieldHandler handler = null;
+        org.exolab.castor.xml.FieldValidator fieldValidator = null;
         //-- initialize attribute descriptors
-        
+
         //-- _name
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(String.class, "_name", "name", org.exolab.castor.xml.NodeType.Attribute);
         desc.setImmutable(true);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 BusinessDataType target = (BusinessDataType) object;
                 return target.getName();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     BusinessDataType target = (BusinessDataType) object;
-                    target.setName( (String) value);
+                    target.setName((String) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return null;
             }
@@ -99,7 +95,7 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
         desc.setHandler(handler);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _name
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -112,16 +108,17 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
         //-- _isRawScript
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(Boolean.TYPE, "_isRawScript", "isRawScript", org.exolab.castor.xml.NodeType.Attribute);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 BusinessDataType target = (BusinessDataType) object;
-                if (!target.hasIsRawScript()) { return null; }
+                if (!target.hasIsRawScript()) {
+                    return null;
+                }
                 return (target.getIsRawScript() ? Boolean.TRUE : Boolean.FALSE);
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     BusinessDataType target = (BusinessDataType) object;
                     // if null, use delete method for optional primitives 
@@ -129,11 +126,12 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
                         target.deleteIsRawScript();
                         return;
                     }
-                    target.setIsRawScript( ((Boolean) value).booleanValue());
+                    target.setIsRawScript(((Boolean) value).booleanValue());
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return null;
             }
@@ -142,7 +140,7 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
         desc.setHandler(handler);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _isRawScript
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -152,26 +150,26 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
         }
         desc.setValidator(fieldValidator);
         //-- initialize element descriptors
-        
+
         //-- _defineVariableList
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.DefineVariable.class, "_defineVariableList", "defineVariable", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 BusinessDataType target = (BusinessDataType) object;
                 return target.getDefineVariable();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     BusinessDataType target = (BusinessDataType) object;
-                    target.addDefineVariable( (org.ralasafe.db.sql.xml.DefineVariable) value);
+                    target.addDefineVariable((org.ralasafe.db.sql.xml.DefineVariable) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public void resetValue(Object object) throws IllegalStateException, IllegalArgumentException {
                 try {
                     BusinessDataType target = (BusinessDataType) object;
@@ -180,6 +178,7 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.DefineVariable();
             }
@@ -190,7 +189,7 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
         desc.setMultivalued(true);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _defineVariableList
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(0);
@@ -200,22 +199,22 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
         //-- _exprGroup
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.ExprGroup.class, "_exprGroup", "exprGroup", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 BusinessDataType target = (BusinessDataType) object;
                 return target.getExprGroup();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     BusinessDataType target = (BusinessDataType) object;
-                    target.setExprGroup( (org.ralasafe.db.sql.xml.ExprGroup) value);
+                    target.setExprGroup((org.ralasafe.db.sql.xml.ExprGroup) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.ExprGroup();
             }
@@ -226,7 +225,7 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _exprGroup
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
@@ -236,22 +235,22 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
         //-- _rawScript
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.RawScript.class, "_rawScript", "rawScript", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue( Object object )
-                throws IllegalStateException
-            {
+            public Object getValue(Object object)
+                    throws IllegalStateException {
                 BusinessDataType target = (BusinessDataType) object;
                 return target.getRawScript();
             }
-            public void setValue( Object object, Object value)
-                throws IllegalStateException, IllegalArgumentException
-            {
+
+            public void setValue(Object object, Object value)
+                    throws IllegalStateException, IllegalArgumentException {
                 try {
                     BusinessDataType target = (BusinessDataType) object;
-                    target.setRawScript( (org.ralasafe.db.sql.xml.RawScript) value);
+                    target.setRawScript((org.ralasafe.db.sql.xml.RawScript) value);
                 } catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
+
             public Object newInstance(Object parent) {
                 return new org.ralasafe.db.sql.xml.RawScript();
             }
@@ -261,7 +260,7 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-        
+
         //-- validation code for: _rawScript
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -270,13 +269,13 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method getAccessMode.
-     * 
+     *
      * @return the access mode specified for this class.
      */
     public org.exolab.castor.mapping.AccessMode getAccessMode(
@@ -286,9 +285,9 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
 
     /**
      * Method getIdentity.
-     * 
+     *
      * @return the identity field, null if this class has no
-     * identity.
+     *         identity.
      */
     public org.exolab.castor.mapping.FieldDescriptor getIdentity(
     ) {
@@ -297,7 +296,7 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
 
     /**
      * Method getJavaClass.
-     * 
+     *
      * @return the Java class represented by this descriptor.
      */
     public Class getJavaClass(
@@ -307,7 +306,7 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
 
     /**
      * Method getNameSpacePrefix.
-     * 
+     *
      * @return the namespace prefix to use when marshaling as XML.
      */
     public String getNameSpacePrefix(
@@ -317,9 +316,9 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
 
     /**
      * Method getNameSpaceURI.
-     * 
+     *
      * @return the namespace URI used when marshaling and
-     * unmarshaling as XML.
+     *         unmarshaling as XML.
      */
     public String getNameSpaceURI(
     ) {
@@ -328,9 +327,9 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
 
     /**
      * Method getValidator.
-     * 
+     *
      * @return a specific validator for the class described by this
-     * ClassDescriptor.
+     *         ClassDescriptor.
      */
     public org.exolab.castor.xml.TypeValidator getValidator(
     ) {
@@ -339,7 +338,7 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
 
     /**
      * Method getXMLName.
-     * 
+     *
      * @return the XML Name for the Class being described.
      */
     public String getXMLName(
@@ -349,10 +348,10 @@ public class BusinessDataTypeDescriptor extends org.exolab.castor.xml.util.XMLCl
 
     /**
      * Method isElementDefinition.
-     * 
+     *
      * @return true if XML schema definition of this Class is that
-     * of a global
-     * element or element with anonymous type definition.
+     *         of a global
+     *         element or element with anonymous type definition.
      */
     public boolean isElementDefinition(
     ) {

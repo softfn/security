@@ -1,7 +1,3 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
 package org.ralasafe.privilege;
 
 import java.sql.SQLException;
@@ -35,292 +31,292 @@ import org.ralasafe.util.DBUtil;
 import org.ralasafe.util.Util;
 
 public class RoleManagerImpl implements RoleManager {
-	private static final Log log=LogFactory.getLog( RoleManagerImpl.class );
-	
-	private static final int RALASAFE_ADMINISTRATOR_ID = -1;
-	private String appName;
-	private String tableName;
+    private static final Log log = LogFactory.getLog(RoleManagerImpl.class);
 
-	private Table roleTable;
-	private TableSelectorImpl roleSelector;
-	private TableSaverImpl roleSaver;
-	private TableUpdator roleUpdator;
-	private TableDeletorImpl roleDeletor;
+    private static final int RALASAFE_ADMINISTRATOR_ID = -1;
+    private String appName;
+    private String tableName;
 
-	private Table rolePrivilegeTable;
-	private TableSelectorImpl rolePrivilegeSelector;
-	private TableSaverImpl rolePrivilegeSaver;
-	private TableUpdator rolePrivilegeUpdator;
-	private TableDeletorImpl rolePrivilegeDeletor;
+    private Table roleTable;
+    private TableSelectorImpl roleSelector;
+    private TableSaverImpl roleSaver;
+    private TableUpdator roleUpdator;
+    private TableDeletorImpl roleDeletor;
 
-	public RoleManagerImpl(String appName) {
-		this.appName = appName;
-		tableName = appName + "_role";
+    private Table rolePrivilegeTable;
+    private TableSelectorImpl rolePrivilegeSelector;
+    private TableSaverImpl rolePrivilegeSaver;
+    private TableUpdator rolePrivilegeUpdator;
+    private TableDeletorImpl rolePrivilegeDeletor;
 
-		// role table
-		TableNewer roleTableNewer = new TableNewer();
-		roleTableNewer.setTableName(tableName);
-		roleTableNewer.setColumnNames(new String[] { "id", "name",
-				"description" });
-		roleTableNewer.setIdColumnNames(new String[] { "id" });
-		roleTableNewer.setUniqueColumnNames(new String[] { "name" });
-		roleTableNewer.setMappingClass(Role.class.getName());
-		roleTableNewer.put("id", new JavaBeanColumnAdapter("id", "int"));
-		roleTableNewer.put("name", new JavaBeanColumnAdapter("name",
-				"java.lang.String"));
-		roleTableNewer.put("description", new JavaBeanColumnAdapter(
-				"description", "java.lang.String"));
-		roleTableNewer.setId(DBPower.getTableId(null, roleTableNewer
-				.getTableName()));
+    public RoleManagerImpl(String appName) {
+        this.appName = appName;
+        tableName = appName + "_role";
 
-		roleTable = roleTableNewer.getTable();
-		roleSelector = new TableSelectorImpl();
-		roleSelector.setObjectNewer(new JavaBeanObjectNewer(roleTableNewer
-				.getMappingClass()));
-		roleSaver = new TableSaverImpl();
-		roleUpdator = new TableUpdatorImpl();
-		roleDeletor = new TableDeletorImpl();
+        // role table
+        TableNewer roleTableNewer = new TableNewer();
+        roleTableNewer.setTableName(tableName);
+        roleTableNewer.setColumnNames(new String[]{"id", "name",
+                "description"});
+        roleTableNewer.setIdColumnNames(new String[]{"id"});
+        roleTableNewer.setUniqueColumnNames(new String[]{"name"});
+        roleTableNewer.setMappingClass(Role.class.getName());
+        roleTableNewer.put("id", new JavaBeanColumnAdapter("id", "int"));
+        roleTableNewer.put("name", new JavaBeanColumnAdapter("name",
+                "java.lang.String"));
+        roleTableNewer.put("description", new JavaBeanColumnAdapter(
+                "description", "java.lang.String"));
+        roleTableNewer.setId(DBPower.getTableId(null, roleTableNewer
+                .getTableName()));
 
-		roleSelector.setTable(roleTable);
-		roleSaver.setTable(roleTable);
-		roleUpdator.setTable(roleTable);
-		roleDeletor.setTable(roleTable);
+        roleTable = roleTableNewer.getTable();
+        roleSelector = new TableSelectorImpl();
+        roleSelector.setObjectNewer(new JavaBeanObjectNewer(roleTableNewer
+                .getMappingClass()));
+        roleSaver = new TableSaverImpl();
+        roleUpdator = new TableUpdatorImpl();
+        roleDeletor = new TableDeletorImpl();
 
-		// RolePrivilege table
-		TableNewer rolePrivilegeTableNewer = new TableNewer();
-		rolePrivilegeTableNewer.setTableName(appName + "_roleprivilege");
-		rolePrivilegeTableNewer.setColumnNames(new String[] { "roleid",
-				"privilegeid" });
-		rolePrivilegeTableNewer.setIdColumnNames(new String[] { "roleid",
-				"privilegeid" });
-		rolePrivilegeTableNewer.setMappingClass(RolePrivilege.class.getName());
-		rolePrivilegeTableNewer.put("roleid", new JavaBeanColumnAdapter(
-				"roleId", "int"));
-		rolePrivilegeTableNewer.put("privilegeid", new JavaBeanColumnAdapter(
-				"privilegeId", "int"));
-		rolePrivilegeTableNewer.setId(DBPower.getTableId(null,
-				rolePrivilegeTableNewer.getTableName()));
+        roleSelector.setTable(roleTable);
+        roleSaver.setTable(roleTable);
+        roleUpdator.setTable(roleTable);
+        roleDeletor.setTable(roleTable);
 
-		rolePrivilegeTable = rolePrivilegeTableNewer.getTable();
-		rolePrivilegeSelector = new TableSelectorImpl();
-		rolePrivilegeSelector.setObjectNewer(new JavaBeanObjectNewer(
-				rolePrivilegeTableNewer.getMappingClass()));
-		rolePrivilegeSaver = new TableSaverImpl();
-		rolePrivilegeUpdator = new TableUpdatorImpl();
-		rolePrivilegeDeletor = new TableDeletorImpl();
+        // RolePrivilege table
+        TableNewer rolePrivilegeTableNewer = new TableNewer();
+        rolePrivilegeTableNewer.setTableName(appName + "_roleprivilege");
+        rolePrivilegeTableNewer.setColumnNames(new String[]{"roleid",
+                "privilegeid"});
+        rolePrivilegeTableNewer.setIdColumnNames(new String[]{"roleid",
+                "privilegeid"});
+        rolePrivilegeTableNewer.setMappingClass(RolePrivilege.class.getName());
+        rolePrivilegeTableNewer.put("roleid", new JavaBeanColumnAdapter(
+                "roleId", "int"));
+        rolePrivilegeTableNewer.put("privilegeid", new JavaBeanColumnAdapter(
+                "privilegeId", "int"));
+        rolePrivilegeTableNewer.setId(DBPower.getTableId(null,
+                rolePrivilegeTableNewer.getTableName()));
 
-		rolePrivilegeSelector.setTable(rolePrivilegeTable);
-		rolePrivilegeSaver.setTable(rolePrivilegeTable);
-		rolePrivilegeUpdator.setTable(rolePrivilegeTable);
-		rolePrivilegeDeletor.setTable(rolePrivilegeTable);
-	}
+        rolePrivilegeTable = rolePrivilegeTableNewer.getTable();
+        rolePrivilegeSelector = new TableSelectorImpl();
+        rolePrivilegeSelector.setObjectNewer(new JavaBeanObjectNewer(
+                rolePrivilegeTableNewer.getMappingClass()));
+        rolePrivilegeSaver = new TableSaverImpl();
+        rolePrivilegeUpdator = new TableUpdatorImpl();
+        rolePrivilegeDeletor = new TableDeletorImpl();
 
-	public void addReservedRole(Locale locale) {
-		if( log.isInfoEnabled() ) {
-			log.info( "Add reserved role(s)" );
-		}
-		addRalasafeAdministratorRole(locale);
-		Collection privilegeIds = new ArrayList();
-		privilegeIds.add(new Integer(Privilege.POLICY_ADMIN_ID));
-		privilegeIds.add(new Integer(Privilege.ASSIGN_ROLE_TO_USER_ID));
-		privilegeIds.add(new Integer(Privilege.ROLE_ADMIN_ID));
-		
-		if( log.isInfoEnabled() ) {
-			log.info( "Assign privileges to reserved role(s)" );
-		}
-		assignPrivileges(RALASAFE_ADMINISTRATOR_ID, privilegeIds);
-	}
+        rolePrivilegeSelector.setTable(rolePrivilegeTable);
+        rolePrivilegeSaver.setTable(rolePrivilegeTable);
+        rolePrivilegeUpdator.setTable(rolePrivilegeTable);
+        rolePrivilegeDeletor.setTable(rolePrivilegeTable);
+    }
 
-	private void addRalasafeAdministratorRole(Locale locale) {
-		try {
-			Role role = new Role();
-			role.setId(RALASAFE_ADMINISTRATOR_ID);
-			role.setName(Util.getMessage(locale,
-					ResourceConstants.RALASAFE_ADMINISTRATOR));
-			roleSaver.save(role);
+    public void addReservedRole(Locale locale) {
+        if (log.isInfoEnabled()) {
+            log.info("Add reserved role(s)");
+        }
+        addRalasafeAdministratorRole(locale);
+        Collection privilegeIds = new ArrayList();
+        privilegeIds.add(new Integer(Privilege.POLICY_ADMIN_ID));
+        privilegeIds.add(new Integer(Privilege.ASSIGN_ROLE_TO_USER_ID));
+        privilegeIds.add(new Integer(Privilege.ROLE_ADMIN_ID));
 
-			// create it's related usercategory
-			UserCategoryManager userCategoryManager = Factory
-					.getUserCategoryManager(appName);
-			userCategoryManager.addUserCategory(role);
-		} catch (EntityExistException e) {
-			throw new DBLevelException(e);
-		}
-	}
+        if (log.isInfoEnabled()) {
+            log.info("Assign privileges to reserved role(s)");
+        }
+        assignPrivileges(RALASAFE_ADMINISTRATOR_ID, privilegeIds);
+    }
 
-	public Role addRole(Role role) throws EntityExistException {
-		role.setId(newRoleId());
-		roleSaver.save(role);
-		
-		if( log.isInfoEnabled() ) {
-			log.info( "Role created: " + role );
-		}
+    private void addRalasafeAdministratorRole(Locale locale) {
+        try {
+            Role role = new Role();
+            role.setId(RALASAFE_ADMINISTRATOR_ID);
+            role.setName(Util.getMessage(locale,
+                    ResourceConstants.RALASAFE_ADMINISTRATOR));
+            roleSaver.save(role);
 
-		// create related usercategory
-		UserCategoryManager userCategoryManager = Factory
-				.getUserCategoryManager(appName);
-		try {
-			userCategoryManager.addUserCategory(role);
-		} catch (EntityExistException e) {
-			log.error( "", e );
-			throw new DBLevelException(e);
-		}
-		return role;
-	}
+            // create it's related usercategory
+            UserCategoryManager userCategoryManager = Factory
+                    .getUserCategoryManager(appName);
+            userCategoryManager.addUserCategory(role);
+        } catch (EntityExistException e) {
+            throw new DBLevelException(e);
+        }
+    }
 
-	private int newRoleId() {
-		try {
-			return DBUtil.getSequenceNextVal(roleTable, "id");
-		} catch (SQLException e) {
-			throw new DBLevelException(e);
-		}
-	}
+    public Role addRole(Role role) throws EntityExistException {
+        role.setId(newRoleId());
+        roleSaver.save(role);
 
-	public void assignPrivileges(int roleId, Collection pvlgIds) {
-		// delete original role-privilege records
-		FieldWhereElement emt = new FieldWhereElement();
-		emt.setColumn(rolePrivilegeTable.getColumns()[0]);
-		emt.setCompartor(SingleValueComparator.EQUAL);
-		emt.setContextValue(true);
+        if (log.isInfoEnabled()) {
+            log.info("Role created: " + role);
+        }
 
-		RolePrivilege rolePrivilege = new RolePrivilege();
-		rolePrivilege.setRoleId(roleId);
-		rolePrivilegeDeletor.delete(emt, rolePrivilege);
+        // create related usercategory
+        UserCategoryManager userCategoryManager = Factory
+                .getUserCategoryManager(appName);
+        try {
+            userCategoryManager.addUserCategory(role);
+        } catch (EntityExistException e) {
+            log.error("", e);
+            throw new DBLevelException(e);
+        }
+        return role;
+    }
 
-		// new records
-		ArrayList rolePrivileges = new ArrayList();
-		Iterator itr = pvlgIds.iterator();
-		while (itr.hasNext()) {
-			int privilegeId = ((Integer) itr.next()).intValue();
-			rolePrivileges.add(new RolePrivilege(roleId, privilegeId));
-		}
+    private int newRoleId() {
+        try {
+            return DBUtil.getSequenceNextVal(roleTable, "id");
+        } catch (SQLException e) {
+            throw new DBLevelException(e);
+        }
+    }
 
-		rolePrivilegeSaver.batchSave(rolePrivileges);
-		
-		if( log.isInfoEnabled() ) {
-			log.info( "Privileges " + pvlgIds + " assigned to roleId=" + roleId );
-		}
-	}
+    public void assignPrivileges(int roleId, Collection pvlgIds) {
+        // delete original role-privilege records
+        FieldWhereElement emt = new FieldWhereElement();
+        emt.setColumn(rolePrivilegeTable.getColumns()[0]);
+        emt.setCompartor(SingleValueComparator.EQUAL);
+        emt.setContextValue(true);
 
-	public void deleteRole(int id) {
-		if( log.isDebugEnabled() ) {
-			log.debug( "delete role-privilege relationships (by assigning none privilege to the role). RoleId=" + id );
-		}
-		// delete role-privilege relationship
-		assignPrivileges(id, new ArrayList());
+        RolePrivilege rolePrivilege = new RolePrivilege();
+        rolePrivilege.setRoleId(roleId);
+        rolePrivilegeDeletor.delete(emt, rolePrivilege);
 
-		if( log.isDebugEnabled() ) {
-			log.debug( "delete user-role relationships. RoleId=" + id );
-		}
-		// delete user-role of current application usertype(s)
-		Collection userTypes = Factory.getApplicationManager().getApplication(
-				appName).getUserTypes();
-		Iterator itr = userTypes.iterator();
-		while (itr.hasNext()) {
-			UserType userType = (UserType) itr.next();
-			UserRoleManager userRoleManager = Factory.getUserRoleManager(
-					appName, userType.getName());
-			userRoleManager.deleteUserRoles(id);
-		}
+        // new records
+        ArrayList rolePrivileges = new ArrayList();
+        Iterator itr = pvlgIds.iterator();
+        while (itr.hasNext()) {
+            int privilegeId = ((Integer) itr.next()).intValue();
+            rolePrivileges.add(new RolePrivilege(roleId, privilegeId));
+        }
 
-		// delete role
-		Role role = new Role();
-		role.setId(id);
-		roleDeletor.deleteByIdColumns(role);
-		
-		if( log.isInfoEnabled() ) {
-			log.info( "Role deleted: " + role );
-		}
-	}
+        rolePrivilegeSaver.batchSave(rolePrivileges);
 
-	public void deleteRolePrivilegeByPrivilege(int privilegeId) {
-		FieldWhereElement emt = new FieldWhereElement();
-		emt.setColumn(rolePrivilegeTable.getColumns()[1]);
-		emt.setCompartor(SingleValueComparator.EQUAL);
-		emt.setContextValue(true);
+        if (log.isInfoEnabled()) {
+            log.info("Privileges " + pvlgIds + " assigned to roleId=" + roleId);
+        }
+    }
 
-		RolePrivilege rolePrivilege = new RolePrivilege();
-		rolePrivilege.setPrivilegeId(privilegeId);
-		rolePrivilegeDeletor.delete(emt, rolePrivilege);
-	}
+    public void deleteRole(int id) {
+        if (log.isDebugEnabled()) {
+            log.debug("delete role-privilege relationships (by assigning none privilege to the role). RoleId=" + id);
+        }
+        // delete role-privilege relationship
+        assignPrivileges(id, new ArrayList());
 
-	public Collection getAllRoles() {
-		return roleSelector.select(new SelectCondition(), null);
-	}
+        if (log.isDebugEnabled()) {
+            log.debug("delete user-role relationships. RoleId=" + id);
+        }
+        // delete user-role of current application usertype(s)
+        Collection userTypes = Factory.getApplicationManager().getApplication(
+                appName).getUserTypes();
+        Iterator itr = userTypes.iterator();
+        while (itr.hasNext()) {
+            UserType userType = (UserType) itr.next();
+            UserRoleManager userRoleManager = Factory.getUserRoleManager(
+                    appName, userType.getName());
+            userRoleManager.deleteUserRoles(id);
+        }
 
-	public Collection getLikelyRoles(String name) {
-		FieldWhereElement emt = new FieldWhereElement();
-		emt.setColumn(roleTable.getColumns()[1]);
-		emt.setCompartor(SingleValueComparator.LIKE);
-		emt.setContextValue(true);
+        // delete role
+        Role role = new Role();
+        role.setId(id);
+        roleDeletor.deleteByIdColumns(role);
 
-		SelectCondition cdtn = new SelectCondition();
-		cdtn.setWhereElement(emt);
+        if (log.isInfoEnabled()) {
+            log.info("Role deleted: " + role);
+        }
+    }
 
-		Role role = new Role();
-		role.setName("%" + name + "%");
+    public void deleteRolePrivilegeByPrivilege(int privilegeId) {
+        FieldWhereElement emt = new FieldWhereElement();
+        emt.setColumn(rolePrivilegeTable.getColumns()[1]);
+        emt.setCompartor(SingleValueComparator.EQUAL);
+        emt.setContextValue(true);
 
-		return roleSelector.select(cdtn, role);
-	}
+        RolePrivilege rolePrivilege = new RolePrivilege();
+        rolePrivilege.setPrivilegeId(privilegeId);
+        rolePrivilegeDeletor.delete(emt, rolePrivilege);
+    }
 
-	public Collection getPrivileges(int roleId) {
-		// get RolePrivilege collection
-		FieldWhereElement emt = new FieldWhereElement();
-		emt.setColumn(rolePrivilegeTable.getColumns()[0]);
-		emt.setCompartor(SingleValueComparator.EQUAL);
-		emt.setContextValue(true);
+    public Collection getAllRoles() {
+        return roleSelector.select(new SelectCondition(), null);
+    }
 
-		SelectCondition cdtn = new SelectCondition();
-		cdtn.setWhereElement(emt);
+    public Collection getLikelyRoles(String name) {
+        FieldWhereElement emt = new FieldWhereElement();
+        emt.setColumn(roleTable.getColumns()[1]);
+        emt.setCompartor(SingleValueComparator.LIKE);
+        emt.setContextValue(true);
 
-		RolePrivilege rolePrivilege = new RolePrivilege();
-		rolePrivilege.setRoleId(roleId);
-		Collection rolePrivileges = rolePrivilegeSelector.select(cdtn,
-				rolePrivilege);
+        SelectCondition cdtn = new SelectCondition();
+        cdtn.setWhereElement(emt);
 
-		// get Privilege collections
-		ArrayList privileges = new ArrayList();
-		Iterator itr = rolePrivileges.iterator();
-		while (itr.hasNext()) {
-			int privilegeId = ((RolePrivilege) itr.next()).getPrivilegeId();
-			privileges.add(Factory.getPrivilegeManager(appName).getPrivilege(
-					privilegeId));
-		}
+        Role role = new Role();
+        role.setName("%" + name + "%");
 
-		return privileges;
-	}
+        return roleSelector.select(cdtn, role);
+    }
 
-	public Role getRole(int id) {
-		Role role = new Role();
-		role.setId(id);
-		return (Role) roleSelector.selectByIdColumns(role);
-	}
+    public Collection getPrivileges(int roleId) {
+        // get RolePrivilege collection
+        FieldWhereElement emt = new FieldWhereElement();
+        emt.setColumn(rolePrivilegeTable.getColumns()[0]);
+        emt.setCompartor(SingleValueComparator.EQUAL);
+        emt.setContextValue(true);
 
-	public boolean hasPrivilege(int roleId, int pvlgId) {
-		//PrivilegeManager privilegeManager = Factory.getPrivilegeManager(appName);
-		boolean hasPrivilege = false;
-		Iterator itr = getPrivileges(roleId).iterator();
-		while (itr.hasNext()) {
-			Privilege privilege = (Privilege) itr.next();
-			if (privilege.getId() == pvlgId) {
-				hasPrivilege = true;
-				break;
-			} /**else {
-				if (privilegeManager.isCascadeChild(privilege.getId(), pvlgId)) {
-					hasPrivilege = true;
-					break;
-				}
-			}*/
-		}
+        SelectCondition cdtn = new SelectCondition();
+        cdtn.setWhereElement(emt);
 
-		return hasPrivilege;
-	}
+        RolePrivilege rolePrivilege = new RolePrivilege();
+        rolePrivilege.setRoleId(roleId);
+        Collection rolePrivileges = rolePrivilegeSelector.select(cdtn,
+                rolePrivilege);
 
-	public void updateRole(Role role) throws EntityExistException {
-		roleUpdator.updateByIdColumns(role);
-		
-		if( log.isInfoEnabled() ) {
-			log.info( "Role updated: " + role );
-		}
-	}
+        // get Privilege collections
+        ArrayList privileges = new ArrayList();
+        Iterator itr = rolePrivileges.iterator();
+        while (itr.hasNext()) {
+            int privilegeId = ((RolePrivilege) itr.next()).getPrivilegeId();
+            privileges.add(Factory.getPrivilegeManager(appName).getPrivilege(
+                    privilegeId));
+        }
+
+        return privileges;
+    }
+
+    public Role getRole(int id) {
+        Role role = new Role();
+        role.setId(id);
+        return (Role) roleSelector.selectByIdColumns(role);
+    }
+
+    public boolean hasPrivilege(int roleId, int pvlgId) {
+        //PrivilegeManager privilegeManager = Factory.getPrivilegeManager(appName);
+        boolean hasPrivilege = false;
+        Iterator itr = getPrivileges(roleId).iterator();
+        while (itr.hasNext()) {
+            Privilege privilege = (Privilege) itr.next();
+            if (privilege.getId() == pvlgId) {
+                hasPrivilege = true;
+                break;
+            } /**else {
+             if (privilegeManager.isCascadeChild(privilege.getId(), pvlgId)) {
+             hasPrivilege = true;
+             break;
+             }
+             }*/
+        }
+
+        return hasPrivilege;
+    }
+
+    public void updateRole(Role role) throws EntityExistException {
+        roleUpdator.updateByIdColumns(role);
+
+        if (log.isInfoEnabled()) {
+            log.info("Role updated: " + role);
+        }
+    }
 }

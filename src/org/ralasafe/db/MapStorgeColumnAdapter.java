@@ -1,7 +1,3 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
 package org.ralasafe.db;
 
 import java.sql.PreparedStatement;
@@ -9,30 +5,30 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MapStorgeColumnAdapter implements ColumnAdapter {
-	private String key;
-	private String className;
+    private String key;
+    private String className;
 
-	private ResultSetReader rsReader;
+    private ResultSetReader rsReader;
 //	private PstmtSetter pstmtSetter;
-	
-	public MapStorgeColumnAdapter(String mapKey) {
-		this.key = mapKey;
-		rsReader=new ResultSetReader.ObjectReader();
-//		pstmtSetter=new PstmtSetter.ObjectPstmtSetter();
-	}
-	
-	public MapStorgeColumnAdapter(String mapKey, String className) {
-		this.key = mapKey;
-		this.className=className;
-		
-		rsReader=ResultSetReaderUtil.getReader( className );
-//		pstmtSetter=PstmtSetterUtil.getSetter( className );O
-	}
 
-	public void readResultSet(ResultSet rs, String columnName, Object o)
-			throws SQLException {
-		Object readValue = rsReader.reader( rs, columnName );
-		
+    public MapStorgeColumnAdapter(String mapKey) {
+        this.key = mapKey;
+        rsReader = new ResultSetReader.ObjectReader();
+//		pstmtSetter=new PstmtSetter.ObjectPstmtSetter();
+    }
+
+    public MapStorgeColumnAdapter(String mapKey, String className) {
+        this.key = mapKey;
+        this.className = className;
+
+        rsReader = ResultSetReaderUtil.getReader(className);
+//		pstmtSetter=PstmtSetterUtil.getSetter( className );O
+    }
+
+    public void readResultSet(ResultSet rs, String columnName, Object o)
+            throws SQLException {
+        Object readValue = rsReader.reader(rs, columnName);
+
 //		if (StringUtil.isEmpty(className)) {
 //			readValue = rs.getObject(columnName);
 //		else if (className.equals("float")
@@ -55,14 +51,14 @@ public class MapStorgeColumnAdapter implements ColumnAdapter {
 //		else
 //			readValue = rs.getObject(columnName);
 //		
-		MapStorgeObject mso = (MapStorgeObject) o;
-		mso.put(key, readValue);
+        MapStorgeObject mso = (MapStorgeObject) o;
+        mso.put(key, readValue);
 
-	}
+    }
 
-	public void readResultSet(ResultSet rs, int columnIndex, Object o)
-			throws SQLException {
-		Object readValue = rsReader.reader( rs, columnIndex );
+    public void readResultSet(ResultSet rs, int columnIndex, Object o)
+            throws SQLException {
+        Object readValue = rsReader.reader(rs, columnIndex);
 //		
 //		if (StringUtil.isEmpty(className))
 //			readValue = rs.getObject(columnIndex);
@@ -85,42 +81,42 @@ public class MapStorgeColumnAdapter implements ColumnAdapter {
 //			readValue = rs.getDate(columnIndex);
 //		else
 //			readValue = rs.getObject(columnIndex);
-		
-		MapStorgeObject mso = (MapStorgeObject) o;
-		mso.put(key, readValue);
-	}
 
-	public void setPreparedStatement(PreparedStatement pstmt, int paramIndex,
-			Object o) throws SQLException {
-		MapStorgeObject mso = (MapStorgeObject) o;
-		Object setValue = mso.get(key);
-		
-		//pstmtSetter.set( pstmt, paramIndex, setValue );
-		if(setValue instanceof java.util.Date){
-			java.util.Date date=(java.util.Date)setValue;
-			setValue= new java.sql.Date(date.getTime());
-		}
-		pstmt.setObject(paramIndex, setValue);
-	}
+        MapStorgeObject mso = (MapStorgeObject) o;
+        mso.put(key, readValue);
+    }
 
-	public Object extractFieldValue(Object o) {
-		MapStorgeObject mso = (MapStorgeObject) o;
-		return mso.get(key);
-	}
+    public void setPreparedStatement(PreparedStatement pstmt, int paramIndex,
+                                     Object o) throws SQLException {
+        MapStorgeObject mso = (MapStorgeObject) o;
+        Object setValue = mso.get(key);
 
-	public String getKey() {
-		return key;
-	}
+        //pstmtSetter.set( pstmt, paramIndex, setValue );
+        if (setValue instanceof java.util.Date) {
+            java.util.Date date = (java.util.Date) setValue;
+            setValue = new java.sql.Date(date.getTime());
+        }
+        pstmt.setObject(paramIndex, setValue);
+    }
 
-	public void setKey( String key ) {
-		this.key=key;
-	}
+    public Object extractFieldValue(Object o) {
+        MapStorgeObject mso = (MapStorgeObject) o;
+        return mso.get(key);
+    }
 
-	public String getClassName() {
-		return className;
-	}
+    public String getKey() {
+        return key;
+    }
 
-	public void setClassName( String className ) {
-		this.className=className;
-	}
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
 }

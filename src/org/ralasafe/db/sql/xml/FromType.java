@@ -1,18 +1,14 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: FromType.java,v 1.1 2010/07/09 08:17:06 back Exp $
  */
-
 package org.ralasafe.db.sql.xml;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
 import org.exolab.castor.xml.Marshaller;
@@ -20,14 +16,14 @@ import org.exolab.castor.xml.Unmarshaller;
 
 /**
  * Class FromType.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:06 $
  */
 public class FromType implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -36,8 +32,8 @@ public class FromType implements java.io.Serializable {
     private java.util.Vector _tableList;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public FromType() {
@@ -46,43 +42,39 @@ public class FromType implements java.io.Serializable {
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
-     * 
-     * 
      * @param vTable
      * @throws IndexOutOfBoundsException if the index
-     * given is outside the bounds of the collection
+     *                                   given is outside the bounds of the collection
      */
     public void addTable(
             final Table vTable)
-    throws IndexOutOfBoundsException {
+            throws IndexOutOfBoundsException {
         this._tableList.addElement(vTable);
     }
 
     /**
-     * 
-     * 
      * @param index
      * @param vTable
      * @throws IndexOutOfBoundsException if the index
-     * given is outside the bounds of the collection
+     *                                   given is outside the bounds of the collection
      */
     public void addTable(
             final int index,
             final Table vTable)
-    throws IndexOutOfBoundsException {
+            throws IndexOutOfBoundsException {
         this._tableList.add(index, vTable);
     }
 
     /**
      * Method enumerateTable.
-     * 
+     *
      * @return an Enumeration over all org.ralasafe.db.sql.xml.Table
-     * elements
+     *         elements
      */
     public java.util.Enumeration enumerateTable(
     ) {
@@ -91,21 +83,21 @@ public class FromType implements java.io.Serializable {
 
     /**
      * Method getTable.
-     * 
+     *
      * @param index
-     * @throws IndexOutOfBoundsException if the index
-     * given is outside the bounds of the collection
      * @return the value of the org.ralasafe.db.sql.xml.Table at the
-     * given index
+     *         given index
+     * @throws IndexOutOfBoundsException if the index
+     *                                   given is outside the bounds of the collection
      */
     public Table getTable(
             final int index)
-    throws IndexOutOfBoundsException {
+            throws IndexOutOfBoundsException {
         // check bounds for index
         if (index < 0 || index >= this._tableList.size()) {
             throw new IndexOutOfBoundsException("getTable: Index value '" + index + "' not in range [0.." + (this._tableList.size() - 1) + "]");
         }
-        
+
         return (Table) _tableList.get(index);
     }
 
@@ -115,7 +107,7 @@ public class FromType implements java.io.Serializable {
      * changing in another thread, we pass a 0-length Array of the
      * correct type into the API call.  This way we <i>know</i>
      * that the Array returned is of exactly the correct length.
-     * 
+     *
      * @return this collection as an Array
      */
     public Table[] getTable(
@@ -126,7 +118,7 @@ public class FromType implements java.io.Serializable {
 
     /**
      * Method getTableCount.
-     * 
+     *
      * @return the size of this collection
      */
     public int getTableCount(
@@ -136,7 +128,7 @@ public class FromType implements java.io.Serializable {
 
     /**
      * Method isValid.
-     * 
+     *
      * @return true if this object is valid according to the schema
      */
     public boolean isValid(
@@ -150,34 +142,34 @@ public class FromType implements java.io.Serializable {
     }
 
     /**
-     * 
-     * 
      * @param out
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException
+     *          if object is
+     *          null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public void marshal(
             final java.io.Writer out)
-    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, out);
     }
 
     /**
-     * 
-     * 
      * @param handler
      * @throws java.io.IOException if an IOException occurs during
-     * marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
+     *                             marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *                             if this
+     *                             object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException
+     *                             if object is
+     *                             null or if any SAXException is thrown during marshaling
      */
     public void marshal(
             final org.xml.sax.ContentHandler handler)
-    throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, handler);
     }
 
@@ -190,7 +182,7 @@ public class FromType implements java.io.Serializable {
 
     /**
      * Method removeTable.
-     * 
+     *
      * @param vTable
      * @return true if the object was removed from the collection.
      */
@@ -202,7 +194,7 @@ public class FromType implements java.io.Serializable {
 
     /**
      * Method removeTableAt.
-     * 
+     *
      * @param index
      * @return the element removed from the collection
      */
@@ -213,65 +205,62 @@ public class FromType implements java.io.Serializable {
     }
 
     /**
-     * 
-     * 
      * @param index
      * @param vTable
      * @throws IndexOutOfBoundsException if the index
-     * given is outside the bounds of the collection
+     *                                   given is outside the bounds of the collection
      */
     public void setTable(
             final int index,
             final Table vTable)
-    throws IndexOutOfBoundsException {
+            throws IndexOutOfBoundsException {
         // check bounds for index
         if (index < 0 || index >= this._tableList.size()) {
             throw new IndexOutOfBoundsException("setTable: Index value '" + index + "' not in range [0.." + (this._tableList.size() - 1) + "]");
         }
-        
+
         this._tableList.set(index, vTable);
     }
 
     /**
-     * 
-     * 
      * @param vTableArray
      */
     public void setTable(
             final Table[] vTableArray) {
         //-- copy array
         _tableList.clear();
-        
+
         for (int i = 0; i < vTableArray.length; i++) {
-                this._tableList.add(vTableArray[i]);
+            this._tableList.add(vTableArray[i]);
         }
     }
 
     /**
      * Method unmarshal.
-     * 
+     *
      * @param reader
-     * @throws org.exolab.castor.xml.MarshalException if object is
-     * null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
      * @return the unmarshaled org.ralasafe.db.sql.xml.FromType
+     * @throws org.exolab.castor.xml.MarshalException
+     *          if object is
+     *          null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public static FromType unmarshal(
             final java.io.Reader reader)
-    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         return (FromType) Unmarshaller.unmarshal(FromType.class, reader);
     }
 
     /**
-     * 
-     * 
-     * @throws org.exolab.castor.xml.ValidationException if this
-     * object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.ValidationException
+     *          if this
+     *          object is an invalid instance according to the schema
      */
     public void validate(
     )
-    throws org.exolab.castor.xml.ValidationException {
+            throws org.exolab.castor.xml.ValidationException {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
     }

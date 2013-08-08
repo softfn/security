@@ -1,26 +1,22 @@
-/**
- * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
- */
+
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: ExprGroupTypeItem.java,v 1.1 2010/07/09 08:17:07 back Exp $
  */
-
 package org.ralasafe.db.sql.xml;
 
 /**
  * Class ExprGroupTypeItem.
- * 
+ *
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:07 $
  */
 public class ExprGroupTypeItem implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -59,8 +55,8 @@ public class ExprGroupTypeItem implements java.io.Serializable {
     private ExprGroup _exprGroup;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public ExprGroupTypeItem() {
@@ -68,13 +64,13 @@ public class ExprGroupTypeItem implements java.io.Serializable {
     }
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Returns the value of field 'binaryExpr'.
-     * 
+     *
      * @return the value of field 'BinaryExpr'.
      */
     public BinaryExpr getBinaryExpr(
@@ -86,7 +82,7 @@ public class ExprGroupTypeItem implements java.io.Serializable {
      * Returns the value of field 'choiceValue'. The field
      * 'choiceValue' has the following description: Internal choice
      * value storage
-     * 
+     *
      * @return the value of field 'ChoiceValue'.
      */
     public Object getChoiceValue(
@@ -96,7 +92,7 @@ public class ExprGroupTypeItem implements java.io.Serializable {
 
     /**
      * Returns the value of field 'exprGroup'.
-     * 
+     *
      * @return the value of field 'ExprGroup'.
      */
     public ExprGroup getExprGroup(
@@ -106,7 +102,7 @@ public class ExprGroupTypeItem implements java.io.Serializable {
 
     /**
      * Returns the value of field 'inExpr'.
-     * 
+     *
      * @return the value of field 'InExpr'.
      */
     public InExpr getInExpr(
@@ -116,7 +112,7 @@ public class ExprGroupTypeItem implements java.io.Serializable {
 
     /**
      * Returns the value of field 'isNotNullExpr'.
-     * 
+     *
      * @return the value of field 'IsNotNullExpr'.
      */
     public IsNotNullExpr getIsNotNullExpr(
@@ -126,7 +122,7 @@ public class ExprGroupTypeItem implements java.io.Serializable {
 
     /**
      * Returns the value of field 'isNullExpr'.
-     * 
+     *
      * @return the value of field 'IsNullExpr'.
      */
     public IsNullExpr getIsNullExpr(
@@ -136,7 +132,7 @@ public class ExprGroupTypeItem implements java.io.Serializable {
 
     /**
      * Returns the value of field 'notInExpr'.
-     * 
+     *
      * @return the value of field 'NotInExpr'.
      */
     public NotInExpr getNotInExpr(
@@ -146,7 +142,7 @@ public class ExprGroupTypeItem implements java.io.Serializable {
 
     /**
      * Sets the value of field 'binaryExpr'.
-     * 
+     *
      * @param binaryExpr the value of field 'binaryExpr'.
      */
     public void setBinaryExpr(
@@ -157,7 +153,7 @@ public class ExprGroupTypeItem implements java.io.Serializable {
 
     /**
      * Sets the value of field 'exprGroup'.
-     * 
+     *
      * @param exprGroup the value of field 'exprGroup'.
      */
     public void setExprGroup(
@@ -168,7 +164,7 @@ public class ExprGroupTypeItem implements java.io.Serializable {
 
     /**
      * Sets the value of field 'inExpr'.
-     * 
+     *
      * @param inExpr the value of field 'inExpr'.
      */
     public void setInExpr(
@@ -179,7 +175,7 @@ public class ExprGroupTypeItem implements java.io.Serializable {
 
     /**
      * Sets the value of field 'isNotNullExpr'.
-     * 
+     *
      * @param isNotNullExpr the value of field 'isNotNullExpr'.
      */
     public void setIsNotNullExpr(
@@ -190,7 +186,7 @@ public class ExprGroupTypeItem implements java.io.Serializable {
 
     /**
      * Sets the value of field 'isNullExpr'.
-     * 
+     *
      * @param isNullExpr the value of field 'isNullExpr'.
      */
     public void setIsNullExpr(
@@ -201,7 +197,7 @@ public class ExprGroupTypeItem implements java.io.Serializable {
 
     /**
      * Sets the value of field 'notInExpr'.
-     * 
+     *
      * @param notInExpr the value of field 'notInExpr'.
      */
     public void setNotInExpr(
