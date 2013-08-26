@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ */
 package org.ralasafe.servlet;
 
 import java.util.Map;
@@ -14,79 +18,79 @@ import org.ralasafe.script.ScriptFactory;
 import org.ralasafe.user.User;
 
 public class UserCategoryPolicyDesignHandler extends AbstractPolicyDesignHandler {
-    private final UserCategoryManager manager;
-    final UserCategoryType xmlUc;
+	private final UserCategoryManager manager;
+	final UserCategoryType xmlUc;
+	
+	public String getPolicyType() {
+		return "userCategory";
+	}
 
-    public String getPolicyType() {
-        return "userCategory";
-    }
+	public String getManagePage() {
+		return "./userCategoryMng.rls";
+	}
 
-    public String getManagePage() {
-        return "./userCategoryMng.rls";
-    }
+	public UserCategoryPolicyDesignHandler( UserCategoryManager manager,
+			UserCategoryType xmlUc ) {
+		this.manager=manager;
+		this.xmlUc=xmlUc;
+	}
 
-    public UserCategoryPolicyDesignHandler(UserCategoryManager manager,
-                                           UserCategoryType xmlUc) {
-        this.manager = manager;
-        this.xmlUc = xmlUc;
-    }
+	public String getDesignPageTitle() {
+		return "Design User Category: " + xmlUc.getName();
+	}
+	
+	public String getRawPageTitle() {
+		return "Edit User Category manually: " + xmlUc.getName();
+	}
+	
+	public DefineVariable[] getVariables() {
+		return xmlUc.getDefineVariable();
+	}
 
-    public String getDesignPageTitle() {
-        return "Design User Category: " + xmlUc.getName();
-    }
+	public void deleteVariable( int id ) {
+		xmlUc.removeDefineVariableAt( id );
+	}
 
-    public String getRawPageTitle() {
-        return "Edit User Category manually: " + xmlUc.getName();
-    }
+	public void addVariable( DefineVariable var ) {
+		xmlUc.addDefineVariable( var );
+	}
 
-    public DefineVariable[] getVariables() {
-        return xmlUc.getDefineVariable();
-    }
+	public void updateVariable( int varIndex, DefineVariable var ) {
+		xmlUc.setDefineVariable( varIndex, var );
+	}
 
-    public void deleteVariable(int id) {
-        xmlUc.removeDefineVariableAt(id);
-    }
+	public ExprGroup getExprGroup() {
+		return xmlUc.getExprGroup();
+	}
 
-    public void addVariable(DefineVariable var) {
-        xmlUc.addDefineVariable(var);
-    }
+	public void save( int id ) throws EntityExistException {
+		manager.updateUserCategory( id, (UserCategory) xmlUc );
+	}
 
-    public void updateVariable(int varIndex, DefineVariable var) {
-        xmlUc.setDefineVariable(varIndex, var);
-    }
+	public void setDesignMode() {
+		xmlUc.setIsRawScript( false );
+	}
+	
+	public void setRawMode() {
+		xmlUc.setIsRawScript( true );
+	}
 
-    public ExprGroup getExprGroup() {
-        return xmlUc.getExprGroup();
-    }
+	public void setRawScript( String script ) {
+		xmlUc.getRawScript().setContent( script );
+	}
 
-    public void save(int id) throws EntityExistException {
-        manager.updateUserCategory(id, (UserCategory) xmlUc);
-    }
+	public String getRawScript() {
+		return xmlUc.getRawScript().getContent();
+	}
 
-    public void setDesignMode() {
-        xmlUc.setIsRawScript(false);
-    }
+	public ScriptTestResult run( User user, Object businessData, Map context ) {
+		AbstractPolicy policy2=getPolicy();
+		org.ralasafe.script.UserCategory script=(org.ralasafe.script.UserCategory) policy2;
+		
+		return script.test( user, context, getQueryManager() );
+	}
 
-    public void setRawMode() {
-        xmlUc.setIsRawScript(true);
-    }
-
-    public void setRawScript(String script) {
-        xmlUc.getRawScript().setContent(script);
-    }
-
-    public String getRawScript() {
-        return xmlUc.getRawScript().getContent();
-    }
-
-    public ScriptTestResult run(User user, Object businessData, Map context) {
-        AbstractPolicy policy2 = getPolicy();
-        org.ralasafe.script.UserCategory script = (org.ralasafe.script.UserCategory) policy2;
-
-        return script.test(user, context, getQueryManager());
-    }
-
-    public AbstractPolicy transferXml2Policy() {
-        return ScriptFactory.getUserCategory(xmlUc, getQueryManager());
-    }
+	public AbstractPolicy transferXml2Policy() {
+		return ScriptFactory.getUserCategory( xmlUc, getQueryManager() );
+	}
 }

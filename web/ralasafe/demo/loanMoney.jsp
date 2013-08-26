@@ -1,6 +1,11 @@
-
-<%@ page language="java" contentType="text/html; charset=gbk"
-	pageEncoding="gbk"%>
+<%
+/**
+ * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ */
+%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@page import="java.util.Collection"%>
 <%@page import="java.util.Iterator,java.text.SimpleDateFormat"%>
 <%@page import="org.ralasafe.demo.LoanMoney"%>
@@ -10,10 +15,10 @@
 <html>
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="shortcut icon" href="../favicon.ico"> 
 <link rel="stylesheet" type="text/css" media="screen" href="../css/ralasafe.css" />
-<title>借款</title>
+<title>Loan Money</title>
 </head>
 <body>
 
@@ -26,35 +31,35 @@ SimpleDateFormat sdf=new SimpleDateFormat( "yyyy-MM-dd" );
 
 <div class="smallContainer">
 
-<h1>借款</h1>
+<h1>Loan Money</h1>
 <%String denyReason=WebRalasafe.getDenyReason(request);
 	if ( denyReason!= null) { %>
 <p><font color="red"><%=denyReason%></font></p>
 <% } %>
 
 <p>
-<font color="green">Ralsafe可以控制客户端向服务器提交的数据</font>
+<font color="green">Ralsafe can control the data you submit to system</font>
 </p>
 
 <form id="appForm" method="post" action="loanMoney" />
 <input type="hidden" name="op" value="add" />
-<label>输入借款金额</label>
+<label>Input money amount</label>
 <input type="text" name="money" />
 <br/>
-<input type="submit" value="借款"/>&nbsp;&nbsp;
-<input type="button" value="返回" onclick="javascript: window.history.go(-1)" />
+<input type="submit" />&nbsp;&nbsp;
+<input type="button" value="Back" onclick="javascript: window.history.go(-1)" />
 </form>
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
 
-<h2>今天本人借款记录</h2>
+<h2>Today load money records</h2>
 <table class="ralaTable">
 	<thead>
 		<tr>
-			<th>日期</th>
-			<th>金额</th>
+			<th>Date</th>
+			<th>Amout</th>
 		</tr>
 	</thead>
 	<tbody>

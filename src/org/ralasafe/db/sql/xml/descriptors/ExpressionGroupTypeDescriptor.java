@@ -1,28 +1,32 @@
-
+/**
+ * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ */
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: ExpressionGroupTypeDescriptor.java,v 1.1 2010/07/09 08:17:19 back Exp $
  */
+
 package org.ralasafe.db.sql.xml.descriptors;
 
-//---------------------------------/
-//- Imported classes and packages -/
+  //---------------------------------/
+ //- Imported classes and packages -/
 //---------------------------------/
 
 import org.ralasafe.db.sql.xml.ExpressionGroupType;
 
 /**
  * Class ExpressionGroupTypeDescriptor.
- *
+ * 
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:19 $
  */
 public class ExpressionGroupTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
 
-    //--------------------------/
-    //- Class/Member Variables -/
+      //--------------------------/
+     //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -33,17 +37,17 @@ public class ExpressionGroupTypeDescriptor extends org.exolab.castor.xml.util.XM
     /**
      * Field _nsPrefix.
      */
-    private String _nsPrefix;
+    private java.lang.String _nsPrefix;
 
     /**
      * Field _nsURI.
      */
-    private String _nsURI;
+    private java.lang.String _nsURI;
 
     /**
      * Field _xmlName.
      */
-    private String _xmlName;
+    private java.lang.String _xmlName;
 
     /**
      * Field _identity.
@@ -51,39 +55,39 @@ public class ExpressionGroupTypeDescriptor extends org.exolab.castor.xml.util.XM
     private org.exolab.castor.xml.XMLFieldDescriptor _identity;
 
 
-    //----------------/
-    //- Constructors -/
+      //----------------/
+     //- Constructors -/
     //----------------/
 
     public ExpressionGroupTypeDescriptor() {
         super();
         _xmlName = "ExpressionGroupType";
         _elementDefinition = false;
-        org.exolab.castor.xml.util.XMLFieldDescriptorImpl desc = null;
-        org.exolab.castor.mapping.FieldHandler handler = null;
-        org.exolab.castor.xml.FieldValidator fieldValidator = null;
+        org.exolab.castor.xml.util.XMLFieldDescriptorImpl  desc           = null;
+        org.exolab.castor.mapping.FieldHandler             handler        = null;
+        org.exolab.castor.xml.FieldValidator               fieldValidator = null;
         //-- initialize attribute descriptors
-
+        
         //-- _linker
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.types.LinkerType.class, "_linker", "linker", org.exolab.castor.xml.NodeType.Attribute);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue(Object object)
-                    throws IllegalStateException {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
                 ExpressionGroupType target = (ExpressionGroupType) object;
                 return target.getLinker();
             }
-
-            public void setValue(Object object, Object value)
-                    throws IllegalStateException, IllegalArgumentException {
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
                 try {
                     ExpressionGroupType target = (ExpressionGroupType) object;
-                    target.setLinker((org.ralasafe.db.sql.xml.types.LinkerType) value);
-                } catch (Exception ex) {
+                    target.setLinker( (org.ralasafe.db.sql.xml.types.LinkerType) value);
+                } catch (java.lang.Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
-
-            public Object newInstance(Object parent) {
+            public java.lang.Object newInstance(java.lang.Object parent) {
                 return null;
             }
         };
@@ -93,43 +97,42 @@ public class ExpressionGroupTypeDescriptor extends org.exolab.castor.xml.util.XM
         desc.setHandler(handler);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-
+        
         //-- validation code for: _linker
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
         }
         desc.setValidator(fieldValidator);
         //-- initialize element descriptors
-
+        
         //-- _items
-        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.ExpressionGroupTypeItem.class, "_items", (String) null, org.exolab.castor.xml.NodeType.Element);
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.ralasafe.db.sql.xml.ExpressionGroupTypeItem.class, "_items", (java.lang.String) null, org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public Object getValue(Object object)
-                    throws IllegalStateException {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
                 ExpressionGroupType target = (ExpressionGroupType) object;
                 return target.getExpressionGroupTypeItem();
             }
-
-            public void setValue(Object object, Object value)
-                    throws IllegalStateException, IllegalArgumentException {
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
                 try {
                     ExpressionGroupType target = (ExpressionGroupType) object;
-                    target.addExpressionGroupTypeItem((org.ralasafe.db.sql.xml.ExpressionGroupTypeItem) value);
-                } catch (Exception ex) {
+                    target.addExpressionGroupTypeItem( (org.ralasafe.db.sql.xml.ExpressionGroupTypeItem) value);
+                } catch (java.lang.Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
-
             public void resetValue(Object object) throws IllegalStateException, IllegalArgumentException {
                 try {
                     ExpressionGroupType target = (ExpressionGroupType) object;
                     target.removeAllExpressionGroupTypeItem();
-                } catch (Exception ex) {
+                } catch (java.lang.Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
-
-            public Object newInstance(Object parent) {
+            public java.lang.Object newInstance(java.lang.Object parent) {
                 return new org.ralasafe.db.sql.xml.ExpressionGroupTypeItem();
             }
         };
@@ -141,7 +144,7 @@ public class ExpressionGroupTypeDescriptor extends org.exolab.castor.xml.util.XM
         desc.setMultivalued(true);
         addFieldDescriptor(desc);
         addSequenceElement(desc);
-
+        
         //-- validation code for: _items
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(0);
@@ -151,13 +154,13 @@ public class ExpressionGroupTypeDescriptor extends org.exolab.castor.xml.util.XM
     }
 
 
-    //-----------/
-    //- Methods -/
+      //-----------/
+     //- Methods -/
     //-----------/
 
     /**
      * Method getAccessMode.
-     *
+     * 
      * @return the access mode specified for this class.
      */
     public org.exolab.castor.mapping.AccessMode getAccessMode(
@@ -167,9 +170,9 @@ public class ExpressionGroupTypeDescriptor extends org.exolab.castor.xml.util.XM
 
     /**
      * Method getIdentity.
-     *
+     * 
      * @return the identity field, null if this class has no
-     *         identity.
+     * identity.
      */
     public org.exolab.castor.mapping.FieldDescriptor getIdentity(
     ) {
@@ -178,40 +181,40 @@ public class ExpressionGroupTypeDescriptor extends org.exolab.castor.xml.util.XM
 
     /**
      * Method getJavaClass.
-     *
+     * 
      * @return the Java class represented by this descriptor.
      */
-    public Class getJavaClass(
+    public java.lang.Class getJavaClass(
     ) {
         return org.ralasafe.db.sql.xml.ExpressionGroupType.class;
     }
 
     /**
      * Method getNameSpacePrefix.
-     *
+     * 
      * @return the namespace prefix to use when marshaling as XML.
      */
-    public String getNameSpacePrefix(
+    public java.lang.String getNameSpacePrefix(
     ) {
         return _nsPrefix;
     }
 
     /**
      * Method getNameSpaceURI.
-     *
+     * 
      * @return the namespace URI used when marshaling and
-     *         unmarshaling as XML.
+     * unmarshaling as XML.
      */
-    public String getNameSpaceURI(
+    public java.lang.String getNameSpaceURI(
     ) {
         return _nsURI;
     }
 
     /**
      * Method getValidator.
-     *
+     * 
      * @return a specific validator for the class described by this
-     *         ClassDescriptor.
+     * ClassDescriptor.
      */
     public org.exolab.castor.xml.TypeValidator getValidator(
     ) {
@@ -220,20 +223,20 @@ public class ExpressionGroupTypeDescriptor extends org.exolab.castor.xml.util.XM
 
     /**
      * Method getXMLName.
-     *
+     * 
      * @return the XML Name for the Class being described.
      */
-    public String getXMLName(
+    public java.lang.String getXMLName(
     ) {
         return _xmlName;
     }
 
     /**
      * Method isElementDefinition.
-     *
+     * 
      * @return true if XML schema definition of this Class is that
-     *         of a global
-     *         element or element with anonymous type definition.
+     * of a global
+     * element or element with anonymous type definition.
      */
     public boolean isElementDefinition(
     ) {

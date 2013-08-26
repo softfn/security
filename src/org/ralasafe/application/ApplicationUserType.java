@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ */
 package org.ralasafe.application;
 
 /**
@@ -6,34 +10,34 @@ package org.ralasafe.application;
  */
 public class ApplicationUserType {
 
-    private String appName;
-    private String userTypeName;
-    private String userMetadataStr;
+	private String appName;
+	private String userTypeName;
+	private String userMetadataStr;
 
-    public ApplicationUserType() {
-    }
+	public ApplicationUserType() {
+	}
 
-    public String getAppName() {
-        return appName;
-    }
+	public String getAppName() {
+		return appName;
+	}
 
-    public void setAppName(String appName) {
-        this.appName = appName;
-    }
+	public void setAppName( String appName ) {
+		this.appName=appName;
+	}
 
-    public String getUserTypeName() {
-        return userTypeName;
-    }
+	public String getUserTypeName() {
+		return userTypeName;
+	}
 
-    public void setUserTypeName(String userTypeName) {
-        this.userTypeName = userTypeName;
-    }
+	public void setUserTypeName( String userTypeName ) {
+		this.userTypeName=userTypeName;
+	}
 
-    public String getUserMetadataStr() {
-        return userMetadataStr;
-    }
+	public String getUserMetadataStr() {
+		return userMetadataStr;
+	}
 
-    public void setUserMetadataStr(String userMetadataStr) {
-        this.userMetadataStr = userMetadataStr;
-    }
+	public void setUserMetadataStr( String userMetadataStr ) {
+		this.userMetadataStr=userMetadataStr;
+	}
 }

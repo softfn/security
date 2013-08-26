@@ -1,4 +1,9 @@
-
+<%
+/**
+ * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ */
+%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="org.ralasafe.privilege.Privilege"%>
@@ -10,6 +15,7 @@ Privilege node=(Privilege) request.getAttribute( "node" );
 	<input type="hidden" name="id" value="n<%=node.getId()%>"/>
 	<input type="hidden" name="parentId" value="n<%=node.getPid()%>"/>
 	<input type="hidden" name="isLeaf" value="<%=node.getIsLeaf()%>"/>
+	<input type="hidden" name="orderNum" value="<%=node.getOrderNum()%>"/>
 	
 	<label><%=i18n.say( "Name" ) %></label>
 	<input name="name" type="text" size="50" value="<%=node.getName()%>"><br/>

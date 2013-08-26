@@ -1,14 +1,18 @@
-
+/**
+ * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ */
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: FormulaType.java,v 1.1 2010/07/09 08:17:05 back Exp $
  */
+
 package org.ralasafe.db.sql.xml;
 
-//---------------------------------/
-//- Imported classes and packages -/
+  //---------------------------------/
+ //- Imported classes and packages -/
 //---------------------------------/
 
 import org.exolab.castor.xml.Marshaller;
@@ -16,14 +20,14 @@ import org.exolab.castor.xml.Unmarshaller;
 
 /**
  * Class FormulaType.
- *
+ * 
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:05 $
  */
 public class FormulaType implements java.io.Serializable {
 
 
-    //--------------------------/
-    //- Class/Member Variables -/
+      //--------------------------/
+     //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -42,8 +46,8 @@ public class FormulaType implements java.io.Serializable {
     private java.util.Vector _variableList;
 
 
-    //----------------/
-    //- Constructors -/
+      //----------------/
+     //- Constructors -/
     //----------------/
 
     public FormulaType() {
@@ -52,39 +56,43 @@ public class FormulaType implements java.io.Serializable {
     }
 
 
-    //-----------/
-    //- Methods -/
+      //-----------/
+     //- Methods -/
     //-----------/
 
     /**
+     * 
+     * 
      * @param vVariable
-     * @throws IndexOutOfBoundsException if the index
-     *                                   given is outside the bounds of the collection
+     * @throws java.lang.IndexOutOfBoundsException if the index
+     * given is outside the bounds of the collection
      */
     public void addVariable(
-            final Variable vVariable)
-            throws IndexOutOfBoundsException {
+            final org.ralasafe.db.sql.xml.Variable vVariable)
+    throws java.lang.IndexOutOfBoundsException {
         this._variableList.addElement(vVariable);
     }
 
     /**
+     * 
+     * 
      * @param index
      * @param vVariable
-     * @throws IndexOutOfBoundsException if the index
-     *                                   given is outside the bounds of the collection
+     * @throws java.lang.IndexOutOfBoundsException if the index
+     * given is outside the bounds of the collection
      */
     public void addVariable(
             final int index,
-            final Variable vVariable)
-            throws IndexOutOfBoundsException {
+            final org.ralasafe.db.sql.xml.Variable vVariable)
+    throws java.lang.IndexOutOfBoundsException {
         this._variableList.add(index, vVariable);
     }
 
     /**
      * Method enumerateVariable.
-     *
+     * 
      * @return an Enumeration over all org.ralasafe.db.sql.xml.Variable
-     *         elements
+     * elements
      */
     public java.util.Enumeration enumerateVariable(
     ) {
@@ -93,7 +101,7 @@ public class FormulaType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'operator'.
-     *
+     * 
      * @return the value of field 'Operator'.
      */
     public org.ralasafe.db.sql.xml.types.FormulaTypeOperatorType getOperator(
@@ -103,7 +111,7 @@ public class FormulaType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'type'.
-     *
+     * 
      * @return the value of field 'Type'.
      */
     public org.ralasafe.db.sql.xml.types.FormulaTypeTypeType getType(
@@ -113,22 +121,22 @@ public class FormulaType implements java.io.Serializable {
 
     /**
      * Method getVariable.
-     *
+     * 
      * @param index
+     * @throws java.lang.IndexOutOfBoundsException if the index
+     * given is outside the bounds of the collection
      * @return the value of the org.ralasafe.db.sql.xml.Variable at the
-     *         given index
-     * @throws IndexOutOfBoundsException if the index
-     *                                   given is outside the bounds of the collection
+     * given index
      */
-    public Variable getVariable(
+    public org.ralasafe.db.sql.xml.Variable getVariable(
             final int index)
-            throws IndexOutOfBoundsException {
+    throws java.lang.IndexOutOfBoundsException {
         // check bounds for index
         if (index < 0 || index >= this._variableList.size()) {
             throw new IndexOutOfBoundsException("getVariable: Index value '" + index + "' not in range [0.." + (this._variableList.size() - 1) + "]");
         }
-
-        return (Variable) _variableList.get(index);
+        
+        return (org.ralasafe.db.sql.xml.Variable) _variableList.get(index);
     }
 
     /**
@@ -137,18 +145,18 @@ public class FormulaType implements java.io.Serializable {
      * are changing in another thread, we pass a 0-length Array of
      * the correct type into the API call.  This way we <i>know</i>
      * that the Array returned is of exactly the correct length.
-     *
+     * 
      * @return this collection as an Array
      */
-    public Variable[] getVariable(
+    public org.ralasafe.db.sql.xml.Variable[] getVariable(
     ) {
-        Variable[] array = new Variable[0];
-        return (Variable[]) this._variableList.toArray(array);
+        org.ralasafe.db.sql.xml.Variable[] array = new org.ralasafe.db.sql.xml.Variable[0];
+        return (org.ralasafe.db.sql.xml.Variable[]) this._variableList.toArray(array);
     }
 
     /**
      * Method getVariableCount.
-     *
+     * 
      * @return the size of this collection
      */
     public int getVariableCount(
@@ -158,7 +166,7 @@ public class FormulaType implements java.io.Serializable {
 
     /**
      * Method isValid.
-     *
+     * 
      * @return true if this object is valid according to the schema
      */
     public boolean isValid(
@@ -172,34 +180,34 @@ public class FormulaType implements java.io.Serializable {
     }
 
     /**
+     * 
+     * 
      * @param out
-     * @throws org.exolab.castor.xml.MarshalException
-     *          if object is
-     *          null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException
-     *          if this
-     *          object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException if object is
+     * null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException if this
+     * object is an invalid instance according to the schema
      */
     public void marshal(
             final java.io.Writer out)
-            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, out);
     }
 
     /**
+     * 
+     * 
      * @param handler
      * @throws java.io.IOException if an IOException occurs during
-     *                             marshaling
-     * @throws org.exolab.castor.xml.ValidationException
-     *                             if this
-     *                             object is an invalid instance according to the schema
-     * @throws org.exolab.castor.xml.MarshalException
-     *                             if object is
-     *                             null or if any SAXException is thrown during marshaling
+     * marshaling
+     * @throws org.exolab.castor.xml.ValidationException if this
+     * object is an invalid instance according to the schema
+     * @throws org.exolab.castor.xml.MarshalException if object is
+     * null or if any SAXException is thrown during marshaling
      */
     public void marshal(
             final org.xml.sax.ContentHandler handler)
-            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+    throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         Marshaller.marshal(this, handler);
     }
 
@@ -212,31 +220,31 @@ public class FormulaType implements java.io.Serializable {
 
     /**
      * Method removeVariable.
-     *
+     * 
      * @param vVariable
      * @return true if the object was removed from the collection.
      */
     public boolean removeVariable(
-            final Variable vVariable) {
+            final org.ralasafe.db.sql.xml.Variable vVariable) {
         boolean removed = _variableList.remove(vVariable);
         return removed;
     }
 
     /**
      * Method removeVariableAt.
-     *
+     * 
      * @param index
      * @return the element removed from the collection
      */
-    public Variable removeVariableAt(
+    public org.ralasafe.db.sql.xml.Variable removeVariableAt(
             final int index) {
-        Object obj = this._variableList.remove(index);
-        return (Variable) obj;
+        java.lang.Object obj = this._variableList.remove(index);
+        return (org.ralasafe.db.sql.xml.Variable) obj;
     }
 
     /**
      * Sets the value of field 'operator'.
-     *
+     * 
      * @param operator the value of field 'operator'.
      */
     public void setOperator(
@@ -246,7 +254,7 @@ public class FormulaType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'type'.
-     *
+     * 
      * @param type the value of field 'type'.
      */
     public void setType(
@@ -255,62 +263,65 @@ public class FormulaType implements java.io.Serializable {
     }
 
     /**
+     * 
+     * 
      * @param index
      * @param vVariable
-     * @throws IndexOutOfBoundsException if the index
-     *                                   given is outside the bounds of the collection
+     * @throws java.lang.IndexOutOfBoundsException if the index
+     * given is outside the bounds of the collection
      */
     public void setVariable(
             final int index,
-            final Variable vVariable)
-            throws IndexOutOfBoundsException {
+            final org.ralasafe.db.sql.xml.Variable vVariable)
+    throws java.lang.IndexOutOfBoundsException {
         // check bounds for index
         if (index < 0 || index >= this._variableList.size()) {
             throw new IndexOutOfBoundsException("setVariable: Index value '" + index + "' not in range [0.." + (this._variableList.size() - 1) + "]");
         }
-
+        
         this._variableList.set(index, vVariable);
     }
 
     /**
+     * 
+     * 
      * @param vVariableArray
      */
     public void setVariable(
-            final Variable[] vVariableArray) {
+            final org.ralasafe.db.sql.xml.Variable[] vVariableArray) {
         //-- copy array
         _variableList.clear();
-
+        
         for (int i = 0; i < vVariableArray.length; i++) {
-            this._variableList.add(vVariableArray[i]);
+                this._variableList.add(vVariableArray[i]);
         }
     }
 
     /**
      * Method unmarshal.
-     *
+     * 
      * @param reader
+     * @throws org.exolab.castor.xml.MarshalException if object is
+     * null or if any SAXException is thrown during marshaling
+     * @throws org.exolab.castor.xml.ValidationException if this
+     * object is an invalid instance according to the schema
      * @return the unmarshaled org.ralasafe.db.sql.xml.FormulaType
-     * @throws org.exolab.castor.xml.MarshalException
-     *          if object is
-     *          null or if any SAXException is thrown during marshaling
-     * @throws org.exolab.castor.xml.ValidationException
-     *          if this
-     *          object is an invalid instance according to the schema
      */
-    public static FormulaType unmarshal(
+    public static org.ralasafe.db.sql.xml.FormulaType unmarshal(
             final java.io.Reader reader)
-            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-        return (FormulaType) Unmarshaller.unmarshal(FormulaType.class, reader);
+    throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+        return (org.ralasafe.db.sql.xml.FormulaType) Unmarshaller.unmarshal(org.ralasafe.db.sql.xml.FormulaType.class, reader);
     }
 
     /**
-     * @throws org.exolab.castor.xml.ValidationException
-     *          if this
-     *          object is an invalid instance according to the schema
+     * 
+     * 
+     * @throws org.exolab.castor.xml.ValidationException if this
+     * object is an invalid instance according to the schema
      */
     public void validate(
     )
-            throws org.exolab.castor.xml.ValidationException {
+    throws org.exolab.castor.xml.ValidationException {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
     }

@@ -1,6 +1,11 @@
-
-<%@ page language="java" contentType="text/html; charset=gbk"
-	pageEncoding="gbk"%>
+<%
+/**
+ * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ */
+%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@page import="java.util.Collection"%>
 <%@page import="java.util.Iterator,java.text.SimpleDateFormat"%>
 <%@page	import="org.ralasafe.demo.Employee,org.ralasafe.demo.Privilege,org.ralasafe.demo.Company,org.ralasafe.WebRalasafe"%>
@@ -9,11 +14,11 @@
 
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="shortcut icon" href="../favicon.ico"> 
 <link rel="stylesheet" type="text/css" media="screen" href="../css/ralasafe.css" />
 
-<title>员工管理</title>
+<title>Employee Management</title>
 </head>
 <body>
 
@@ -25,13 +30,13 @@ SimpleDateFormat shortSdf=new SimpleDateFormat( "yyyy-MM-dd" );
 %>
 
 <div class="smallContainer">
-<h1>员工管理</h1>
+<h1>Employee Management</h1>
 
 <p>
-<font color="green">Ralasafe可以控制如下这种下拉框显示内容</font>
+<font color="green">Ralsafe can control select element like this one</font>
 </p>
 
-<label>公司</label>
+<label>Company</label>
 <select id="companyId" name="companyId">
 	<%
 		// get company list through ralasafe
@@ -46,18 +51,18 @@ SimpleDateFormat shortSdf=new SimpleDateFormat( "yyyy-MM-dd" );
 
 <p>&nbsp;</p>
 <p>
-<font color="green">Ralasafe还可以控制数据库行列数据</font>
+<font color="green">Ralasafe can also control row and column level data</font>
 </p>
 
-<label>员工列表</label>
+<label>Employee List</label>
 <table class="ralaTable">
 	<thead>
 		<tr>
-			<th >姓名</th>
-			<th >聘用日期</th>
-			<th >公司</th>
-			<th >部门</th>
-			<th >是否经理</th>
+			<th >Name</th>
+			<th >Hire date</th>
+			<th >Company</th>
+			<th >Department</th>
+			<th >Is a manager?</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -71,7 +76,7 @@ SimpleDateFormat shortSdf=new SimpleDateFormat( "yyyy-MM-dd" );
 			<td><%=(employee.getHireDate()==null?"":shortSdf.format(employee.getHireDate()))%></td>
 			<td><%=(employee.getCompanyName()==null?"":employee.getCompanyName())%></td>
 			<td><%=(employee.getDepartmentName()==null?"":employee.getDepartmentName())%></td>
-			<td><%=(employee.getIsManager()==1?"是":"否")%></td>
+			<td><%=(employee.getIsManager()==1?"YES":"NO")%></td>
 		</tr>
 		<%
 			}

@@ -1,28 +1,32 @@
-
+/**
+ * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ */
 /*
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.2</a>, using an XML
  * Schema.
  * $Id: LinkerType.java,v 1.1 2010/07/09 08:17:54 back Exp $
  */
+
 package org.ralasafe.db.sql.xml.types;
 
-//---------------------------------/
-//- Imported classes and packages -/
+  //---------------------------------/
+ //- Imported classes and packages -/
 //---------------------------------/
 
 import java.util.Hashtable;
 
 /**
  * Class LinkerType.
- *
+ * 
  * @version $Revision: 1.1 $ $Date: 2010/07/09 08:17:54 $
  */
 public class LinkerType implements java.io.Serializable {
 
 
-    //--------------------------/
-    //- Class/Member Variables -/
+      //--------------------------/
+     //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -48,7 +52,7 @@ public class LinkerType implements java.io.Serializable {
     /**
      * Field _memberTable.
      */
-    private static Hashtable _memberTable = init();
+    private static java.util.Hashtable _memberTable = init();
 
     /**
      * Field type.
@@ -58,30 +62,30 @@ public class LinkerType implements java.io.Serializable {
     /**
      * Field stringValue.
      */
-    private String stringValue = null;
+    private java.lang.String stringValue = null;
 
 
+      //----------------/
+     //- Constructors -/
     //----------------/
-    //- Constructors -/
-    //----------------/
 
-    private LinkerType(final int type, final String value) {
+    private LinkerType(final int type, final java.lang.String value) {
         super();
         this.type = type;
         this.stringValue = value;
     }
 
 
-    //-----------/
-    //- Methods -/
+      //-----------/
+     //- Methods -/
     //-----------/
 
     /**
      * Method enumerate.Returns an enumeration of all possible
      * instances of LinkerType
-     *
+     * 
      * @return an Enumeration over all possible instances of
-     *         LinkerType
+     * LinkerType
      */
     public static java.util.Enumeration enumerate(
     ) {
@@ -90,7 +94,7 @@ public class LinkerType implements java.io.Serializable {
 
     /**
      * Method getType.Returns the type of this LinkerType
-     *
+     * 
      * @return the type of this LinkerType
      */
     public int getType(
@@ -100,10 +104,10 @@ public class LinkerType implements java.io.Serializable {
 
     /**
      * Method init.
-     *
+     * 
      * @return the initialized Hashtable for the member table
      */
-    private static Hashtable init(
+    private static java.util.Hashtable init(
     ) {
         Hashtable members = new Hashtable();
         members.put("AND", AND);
@@ -115,10 +119,10 @@ public class LinkerType implements java.io.Serializable {
      * Method readResolve. will be called during deserialization to
      * replace the deserialized object with the correct constant
      * instance.
-     *
+     * 
      * @return this deserialized object
      */
-    private Object readResolve(
+    private java.lang.Object readResolve(
     ) {
         return valueOf(this.stringValue);
     }
@@ -126,10 +130,10 @@ public class LinkerType implements java.io.Serializable {
     /**
      * Method toString.Returns the String representation of this
      * LinkerType
-     *
+     * 
      * @return the String representation of this LinkerType
      */
-    public String toString(
+    public java.lang.String toString(
     ) {
         return this.stringValue;
     }
@@ -137,13 +141,13 @@ public class LinkerType implements java.io.Serializable {
     /**
      * Method valueOf.Returns a new LinkerType based on the given
      * String value.
-     *
+     * 
      * @param string
      * @return the LinkerType value of parameter 'string'
      */
-    public static LinkerType valueOf(
-            final String string) {
-        Object obj = null;
+    public static org.ralasafe.db.sql.xml.types.LinkerType valueOf(
+            final java.lang.String string) {
+        java.lang.Object obj = null;
         if (string != null) {
             obj = _memberTable.get(string);
         }

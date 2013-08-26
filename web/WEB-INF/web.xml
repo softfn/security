@@ -2,15 +2,8 @@
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app id="WebApp_ID">
 	<display-name>ralasafe</display-name>
-	
-	<filter>
-		<filter-name>encoding</filter-name>
-		<filter-class>filter.SetCharacterEncodingFilter</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>utf-8</param-value>
-		</init-param>
-	</filter>
+
+	<!-- LoginFilter & UrlAclFilter are optional. This is an example config. -->
 	<filter>
 		<filter-name>ralasafe/LoginFilter</filter-name>
 		<filter-class>org.ralasafe.webFilter.LoginFilter</filter-class>
@@ -44,10 +37,6 @@
 		</init-param>
 	</filter>
 	<filter-mapping>
-		<filter-name>encoding</filter-name>
-		<url-pattern>/ralasafe/*</url-pattern>
-	</filter-mapping>
-	<filter-mapping>
 		<filter-name>ralasafe/LoginFilter</filter-name>
 		<url-pattern>/ralasafe/demo/*</url-pattern>
 	</filter-mapping>
@@ -70,11 +59,9 @@
 		</init-param>
 		<load-on-startup>4</load-on-startup>
 	</servlet>
-    <servlet-mapping>
-        <servlet-name>ralasafe</servlet-name>
-        <url-pattern>*.rls</url-pattern>
-    </servlet-mapping>
-
+	
+	
+	
 	<!-- DEMO -->
 	<servlet>
 		<servlet-name>ralasafe/demo/DemoLogoutServlet</servlet-name>
@@ -88,6 +75,14 @@
 		<servlet-name>ralasafe/demo/DemoLoanMoneyServlet</servlet-name>
 		<servlet-class> org.ralasafe.demo.LoanMoneyServlet</servlet-class>
 	</servlet>
+	<!-- DEMO END -->
+
+	<servlet-mapping>
+		<servlet-name>ralasafe</servlet-name>
+		<url-pattern>*.rls</url-pattern>
+	</servlet-mapping>
+	
+	<!-- DEMO -->
 	<servlet-mapping>
 		<servlet-name>ralasafe/demo/DemoLogoutServlet</servlet-name>
 		<url-pattern>/ralasafe/demo/demoLogout</url-pattern>
@@ -101,5 +96,5 @@
 		<url-pattern>/ralasafe/demo/loanMoney</url-pattern>
 	</servlet-mapping>
 	<!-- DEMO END -->
-
+	
 </web-app>

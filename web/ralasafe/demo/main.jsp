@@ -1,6 +1,11 @@
-
-<%@ page language="java" contentType="text/html; charset=gbk"
-	pageEncoding="gbk"%>
+<%
+/**
+ * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ */
+%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 
 <%@page import="org.ralasafe.user.User"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -14,10 +19,10 @@
 <%
 	Locale locale = request.getLocale();
 %>
-<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="shortcut icon" href="../favicon.ico"> 
 <link rel="stylesheet" type="text/css" media="screen" href="../css/ralasafe.css" />
-<title>功能菜单</title>
+<title>Menu</title>
 </head>
 <body>
 <jsp:include page="../header.jsp"></jsp:include>
@@ -27,7 +32,7 @@
 	<thead>
 		<tr>
 			<th bgcolor="#F4F4F4">
-			<h1>功能菜单</h1>
+			<h1>Menu</h1>
 			</th>
 		</tr>
 	</thead>
@@ -39,7 +44,7 @@
 	%>
 	<tr>
 		<td><a href="employee">
-		<h2>员工管理</h2>
+		<h2>Employee Management</h2>
 		</a></td>
 	</tr>
 	<%
@@ -52,7 +57,7 @@
 	%>
 	<tr>
 		<td><a href="loanMoney">
-		<h2>借款</h2>
+		<h2>Loan Money</h2>
 		</a></td>
 	</tr>
 	<%
@@ -60,7 +65,7 @@
 	%>
 	<tr>
 		<td><a href="demoLogout">
-		<h2>退出</h2>
+		<h2>Logout</h2>
 		</a></td>
 	</tr>
 </table>

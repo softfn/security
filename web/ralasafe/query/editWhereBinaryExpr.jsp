@@ -1,4 +1,9 @@
-
+<%
+/**
+ * Copyright (c) 2004-2011 Wang Jinbao(Julian Wong), http://www.ralasafe.com
+ * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ */
+%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="org.ralasafe.servlet.QueryDesignHandler"%>
@@ -29,17 +34,23 @@ BinaryExpression expr=null;
 Column column1=null;
 String contextValue1="";
 String simpleValue1="";
+String simpleValueType1="";
 String userValue1="";
 Column column2=null;
 String contextValue2="";
 String simpleValue2="";
+String simpleValueType2="";
 String userValue2="";
+int operator=0;
 
 if( item!=null ) {
 	expr=item.getBinaryExpression();
 }
 if( expr!=null&&expr.getOperand1().getOperand().getColumn()!=null ) {
 	column1=expr.getOperand1().getOperand().getColumn();
+}
+if( expr!=null&&expr.getOperator().getSimpleOperator()!=null ) {
+	operator=expr.getOperator().getSimpleOperator().getType();
 }
 if( expr!=null&&expr.getOperand1().getOperand().getValue()!=null ) {
 	if(	expr.getOperand1().getOperand().getValue().getContextValue()!=null ) {
@@ -48,6 +59,7 @@ if( expr!=null&&expr.getOperand1().getOperand().getValue()!=null ) {
 
 	if(	expr.getOperand1().getOperand().getValue().getSimpleValue()!=null ) {
 		simpleValue1=expr.getOperand1().getOperand().getValue().getSimpleValue().getContent();
+		simpleValueType1=expr.getOperand1().getOperand().getValue().getSimpleValue().getType().toString();
 	}
 	
 	if(	expr.getOperand1().getOperand().getValue().getUserValue()!=null ) {
@@ -65,6 +77,7 @@ if( expr!=null&&expr.getOperand2().getOperand().getValue()!=null ) {
 
 	if(	expr.getOperand2().getOperand().getValue().getSimpleValue()!=null ) {
 		simpleValue2=expr.getOperand2().getOperand().getValue().getSimpleValue().getContent();
+		simpleValueType2=expr.getOperand2().getOperand().getValue().getSimpleValue().getType().toString();
 	}
 	
 	if(	expr.getOperand2().getOperand().getValue().getUserValue()!=null ) {
@@ -130,11 +143,11 @@ if( expr!=null&&expr.getOperand2().getOperand().getValue()!=null ) {
 <div id="whereExprDiv_1_simpleValue">
 <label><%=i18n.say( "Simple_value" )%></label>
 <select name="simpleValueType1">
-	<option value="string">String</option>
-	<option value="integer">Integer</option>
-	<option value="float">Float</option>
-	<option value="boolean">Boolean</option>
-	<option value="datetime">Datetime</option>
+	<option value="string" <%="string".equals(simpleValueType1)?"selected":""%>>String</option>
+	<option value="integer" <%="integer".equals(simpleValueType1)?"selected":""%>>Integer</option>
+	<option value="float" <%="float".equals(simpleValueType1)?"selected":""%>>Float</option>
+	<option value="boolean" <%="boolean".equals(simpleValueType1)?"selected":""%>>Boolean</option>
+	<option value="datetime" <%="datetime".equals(simpleValueType1)?"selected":""%>>Datetime</option>
 </select>
 <input type="text" name="simpleValue1" value="<%=simpleValue1%>" />	
 <br/><font size="-1">
@@ -164,12 +177,12 @@ if( expr!=null&&expr.getOperand2().getOperand().getValue()!=null ) {
 <div>
 <label><%=i18n.say( "Operator" )%></label>
 <select name="operator">
-	<option value="=">=</option>
-	<option value="!=">!=</option>
-	<option value="&gt;">&gt;</option>
-	<option value="&gt;=">&gt;=</option>
-	<option value="&lt;">&lt;</option>
-	<option value="&lt;=">&lt;=</option>
+	<option value="=" <%=operator==0?"selected":""%>>=</option>
+	<option value="!=" <%=operator==1?"selected":""%>>!=</option>
+	<option value="&gt;" <%=operator==5?"selected":""%>>&gt;</option>
+	<option value="&gt;=" <%=operator==4?"selected":""%>>&gt;=</option>
+	<option value="&lt;" <%=operator==3?"selected":""%>>&lt;</option>
+	<option value="&lt;=" <%=operator==2?"selected":""%>>&lt;=</option>
 </select>
 </div>
 
@@ -217,11 +230,11 @@ if( expr!=null&&expr.getOperand2().getOperand().getValue()!=null ) {
 <div id="whereExprDiv_2_simpleValue">
 <label><%=i18n.say( "Simple_value" )%></label>
 <select name="simpleValueType2">
-	<option value="string">String</option>
-	<option value="integer">Integer</option>
-	<option value="float">Float</option>
-	<option value="boolean">Boolean</option>
-	<option value="datetime">Datetime</option>
+	<option value="string" <%="string".equals(simpleValueType2)?"selected":""%>>String</option>
+	<option value="integer" <%="integer".equals(simpleValueType2)?"selected":""%>>Integer</option>
+	<option value="float" <%="float".equals(simpleValueType2)?"selected":""%>>Float</option>
+	<option value="boolean" <%="boolean".equals(simpleValueType2)?"selected":""%>>Boolean</option>
+	<option value="datetime" <%="datetime".equals(simpleValueType2)?"selected":""%>>Datetime</option>
 </select>
 <input type="text" name="simpleValue2" value="<%=simpleValue2%>" />	
 <br/><font size="-1">
